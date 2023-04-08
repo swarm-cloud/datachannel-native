@@ -1,0 +1,44 @@
+apply plugin: "com.android.library"
+
+android {
+  compileSdk = Consts.androidCompileSdk
+  ndkVersion = Consts.androidNdk
+  namespace = Consts.androidNS
+
+  defaultConfig {
+    minSdk = Consts.androidMinSdk
+    targetSdk = Consts.androidTargetSdk
+
+    sourceSets["main"].java.srcDir("src/androidMain/java")
+    ndkVersion = Consts.androidNdk
+    ndk.abiFilters = Consts.ndkAbis
+
+    externalNativeBuild {
+      cmake {
+        cppFlags '-std=c++17'
+        arguments '-DANDROID_STL=c++_shared',
+            '-DNO_WEBSOCKET=ON', '-DNO_MEDIA=ON',
+            '-DNO_EXAMPLES=ON', '-DNO_TESTS=ON'
+        targets 'datachannel'
+      }
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+  }
+
+  externalNativeBuild {
+    cmake {
+      path file('../libdatachannel/CMakeLists.txt')
+      version '3.22.1'
+    }
+  }
+
+  buildFeatures.prefab = true
+}
+
+dependencies {
+  implementation 'com.android.ndk.thirdparty:openssl:1.1.1q-beta-1'
+}

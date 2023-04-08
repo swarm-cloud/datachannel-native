@@ -1,0 +1,3 @@
+[submodule "libdatachannel"]
+	path = libdatachannel
+	url = https://github.com/HackWebRTC/libdatachannel.git
