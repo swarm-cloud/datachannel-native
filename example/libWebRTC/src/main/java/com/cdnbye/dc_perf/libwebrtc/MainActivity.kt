@@ -1,12 +1,17 @@
 package com.cdnbye.dc_perf.libwebrtc
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Surface
@@ -15,6 +20,7 @@ import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -78,27 +84,10 @@ fun MyApplicationTheme(
 }
 
 class MainActivity : ComponentActivity() {
-  private var pc1: PeerConnection? = null
-  private var pc2: PeerConnection? = null
-
-  private var dc1: DataChannel? = null
-  private var dc2: DataChannel? = null
-
-  private val pc1Candidates = ArrayList<IceCandidate>()
-  private val pc2Candidates = ArrayList<IceCandidate>()
+  private val handler = Handler(Looper.getMainLooper())
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
-    setContent {
-      MyApplicationTheme {
-        Surface(
-          modifier = Modifier.fillMaxSize(),
-          color = MaterialTheme.colors.background
-        ) {
-        }
-      }
-    }
 
     PeerConnectionFactory.initialize(
       InitializationOptions.builder(applicationContext)
@@ -107,25 +96,65 @@ class MainActivity : ComponentActivity() {
 
     val pcFactory = PeerConnectionFactory.builder()
       .createPeerConnectionFactory()
+
+    setContent {
+      MyApplicationTheme {
+        Surface(
+          modifier = Modifier.fillMaxSize(),
+          color = MaterialTheme.colors.background
+        ) {
+          Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+          ) {
+            TestText(text = "libWebRTC")
+
+            Button(onClick = {
+              testDc(pcFactory)
+            }) {
+              TestText(text = "test")
+            }
+
+            Button(onClick = {
+              perfDc(pcFactory)
+            }) {
+              TestText(text = "perf")
+            }
+          }
+        }
+      }
+    }
+  }
+
+  private fun testDc(pcFactory: PeerConnectionFactory, log: Boolean = true, msgCount: Int = 1) {
     val config = PeerConnection.RTCConfiguration(emptyList())
+
+    var pc1: PeerConnection? = null
+    var pc2: PeerConnection? = null
+
+    var dc1: DataChannel? = null
+    var dc2: DataChannel? = null
+
+    val pc1Candidates = ArrayList<IceCandidate>()
+    val pc2Candidates = ArrayList<IceCandidate>()
 
     pc1 = pcFactory.createPeerConnection(config, object : PeerConnection.Observer {
       override fun onSignalingChange(state: SignalingState?) {
       }
 
       override fun onIceConnectionChange(state: IceConnectionState?) {
-        Log.e("XXPXX", "pc1 onIceConnectionChange $state")
+        if (log) Log.e("XXPXX", "pc1 onIceConnectionChange $state")
       }
 
       override fun onIceConnectionReceivingChange(p0: Boolean) {
       }
 
       override fun onIceGatheringChange(state: IceGatheringState?) {
-        Log.e("XXPXX", "pc1 onIceGatheringChange $state")
+        if (log) Log.e("XXPXX", "pc1 onIceGatheringChange $state")
       }
 
       override fun onIceCandidate(candidate: IceCandidate?) {
-        Log.e("XXPXX", "pc1 onIceCandidate $candidate")
+        if (log) Log.e("XXPXX", "pc1 onIceCandidate $candidate")
 
         pc1Candidates.add(candidate!!)
         pc2?.addIceCandidate(candidate)
@@ -135,7 +164,7 @@ class MainActivity : ComponentActivity() {
       }
 
       override fun onDataChannel(dc: DataChannel?) {
-        Log.e("XXPXX", "pc1 onDataChannel $dc")
+        if (log) Log.e("XXPXX", "pc1 onDataChannel $dc")
       }
 
       override fun onRenegotiationNeeded() {
@@ -147,18 +176,18 @@ class MainActivity : ComponentActivity() {
       }
 
       override fun onIceConnectionChange(state: IceConnectionState?) {
-        Log.e("XXPXX", "pc2 onIceConnectionChange $state")
+        if (log) Log.e("XXPXX", "pc2 onIceConnectionChange $state")
       }
 
       override fun onIceConnectionReceivingChange(p0: Boolean) {
       }
 
       override fun onIceGatheringChange(state: IceGatheringState?) {
-        Log.e("XXPXX", "pc2 onIceGatheringChange $state")
+        if (log) Log.e("XXPXX", "pc2 onIceGatheringChange $state")
       }
 
       override fun onIceCandidate(candidate: IceCandidate?) {
-        Log.e("XXPXX", "pc2 onIceCandidate $candidate")
+        if (log) Log.e("XXPXX", "pc2 onIceCandidate $candidate")
 
         pc2Candidates.add(candidate!!)
         pc1?.addIceCandidate(candidate)
@@ -168,24 +197,23 @@ class MainActivity : ComponentActivity() {
       }
 
       override fun onDataChannel(dc: DataChannel?) {
-        Log.e("XXPXX", "pc2 onDataChannel $dc")
+        if (log) Log.e("XXPXX", "pc2 onDataChannel $dc")
         dc2 = dc
         dc2?.registerObserver(object : DataChannel.Observer {
           override fun onBufferedAmountChange(p0: Long) {
-            Log.e("XXPXX", "dc2 onBufferedAmountChange $p0")
+            if (log) Log.e("XXPXX", "dc2 onBufferedAmountChange $p0")
           }
 
           override fun onStateChange() {
-            Log.e("XXPXX", "dc2 onStateChange ${dc2?.state()}")
+            if (log) Log.e("XXPXX", "dc2 onStateChange ${dc2?.state()}")
 
             if (dc2?.state() == OPEN) {
-              dc2?.send(Buffer(ByteBuffer.wrap("Hello world from dc2".toByteArray()), false))
-              dc2?.send(Buffer(ByteBuffer.wrap("binary message from dc2".toByteArray()), true))
+              sendMsg(dc2!!, "pc2", msgCount)
             }
           }
 
           override fun onMessage(buffer: Buffer?) {
-            handleMessage("dc2", buffer)
+            if (log) logMessage("dc2", buffer)
           }
         })
       }
@@ -198,26 +226,26 @@ class MainActivity : ComponentActivity() {
     dc1 = pc1?.createDataChannel("test", init)
 
     pc1?.createOffer(sdpObserver(false) {
-      Log.e("XXPXX", "pc1 create offer success ${it?.description}")
+      if (log) Log.e("XXPXX", "pc1 create offer success ${it?.description}")
 
-      pc1?.setLocalDescription(sdpObserver(true) {
-        Log.e("XXPXX", "pc1 set offer success")
+      pc1.setLocalDescription(sdpObserver(true) {
+        if (log) Log.e("XXPXX", "pc1 set offer success")
       }, it)
 
       pc2?.setRemoteDescription(sdpObserver(true) {
-        Log.e("XXPXX", "pc2 set offer success")
+        if (log) Log.e("XXPXX", "pc2 set offer success")
 
-        pc2?.createAnswer(sdpObserver(false) { it2 ->
-          Log.e("XXPXX", "pc2 create answer success")
+        pc2.createAnswer(sdpObserver(false) { it2 ->
+          if (log) Log.e("XXPXX", "pc2 create answer success")
 
-          pc2?.setLocalDescription(sdpObserver(true) {
-            Log.e("XXPXX", "pc2 set answer success")
-            addIceCandidates(pc2!!, pc1Candidates)
+          pc2.setLocalDescription(sdpObserver(true) {
+            if (log) Log.e("XXPXX", "pc2 set answer success")
+            addIceCandidates(pc2, pc1Candidates)
           }, it2)
 
-          pc1?.setRemoteDescription(sdpObserver(true) {
-            Log.e("XXPXX", "pc1 set answer success")
-            addIceCandidates(pc1!!, pc2Candidates)
+          pc1.setRemoteDescription(sdpObserver(true) {
+            if (log) Log.e("XXPXX", "pc1 set answer success")
+            addIceCandidates(pc1, pc2Candidates)
           }, it2)
         }, MediaConstraints())
       }, it)
@@ -225,22 +253,40 @@ class MainActivity : ComponentActivity() {
 
     dc1?.registerObserver(object : DataChannel.Observer {
       override fun onBufferedAmountChange(p0: Long) {
-        Log.e("XXPXX", "dc1 onBufferedAmountChange $p0")
+        if (log) Log.e("XXPXX", "dc1 onBufferedAmountChange $p0")
       }
 
       override fun onStateChange() {
-        Log.e("XXPXX", "dc1 onStateChange ${dc1?.state()}")
+        if (log) Log.e("XXPXX", "dc1 onStateChange ${dc1.state()}")
 
-        if (dc1?.state() == OPEN) {
-          dc1?.send(Buffer(ByteBuffer.wrap("Hello world from dc1".toByteArray()), false))
-          dc1?.send(Buffer(ByteBuffer.wrap("binary message from dc1".toByteArray()), true))
+        if (dc1.state() == OPEN) {
+          sendMsg(dc1, "pc1", msgCount)
         }
       }
 
       override fun onMessage(buffer: Buffer?) {
-        handleMessage("dc1", buffer)
+        if (log) logMessage("dc1", buffer)
       }
     })
+  }
+
+  private fun sendMsg(dc: DataChannel, tag: String, i: Int) {
+    if (i < 0) {
+      return
+    }
+
+    dc.send(Buffer(ByteBuffer.wrap("Hello world $i from $tag".toByteArray()), false))
+    dc.send(Buffer(ByteBuffer.wrap("binary message $i from $tag".toByteArray()), true))
+
+    handler.postDelayed({
+      sendMsg(dc, tag, i - 1)
+    }, 50)
+  }
+
+  private fun perfDc(pcFactory: PeerConnectionFactory, pcCount: Int = 100) {
+    for (i in 0..pcCount) {
+      testDc(pcFactory, false, 100 * 100)
+    }
   }
 
   private fun addIceCandidates(pc: PeerConnection, candidates: List<IceCandidate>) {
@@ -249,7 +295,7 @@ class MainActivity : ComponentActivity() {
     }
   }
 
-  private fun handleMessage(label: String, buffer: Buffer?) {
+  private fun logMessage(label: String, buffer: Buffer?) {
     if (buffer == null) {
       return
     }
@@ -287,7 +333,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(text: String) {
+fun TestText(text: String) {
   Text(text = text)
 }
 
@@ -295,6 +341,6 @@ fun Greeting(text: String) {
 @Composable
 fun DefaultPreview() {
   MyApplicationTheme {
-    Greeting("Hello, Android!")
+    TestText("test")
   }
 }

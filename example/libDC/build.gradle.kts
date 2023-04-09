@@ -37,7 +37,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":data-channel-android"))
+//    implementation(project(":data-channel-android"))
+    implementation(files("$rootDir/libs/data-channel-android-release.aar"))
     implementation(AndroidX.compose.ui)
     implementation(AndroidX.compose.ui.tooling)
     implementation(AndroidX.compose.ui.toolingPreview)
