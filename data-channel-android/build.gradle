@@ -1,4 +1,7 @@
-apply plugin: "com.android.library"
+plugins {
+  id("com.android.library")
+  id("org.jetbrains.kotlin.android")
+}
 
 android {
   compileSdk = Consts.androidCompileSdk
@@ -9,9 +12,13 @@ android {
     minSdk = Consts.androidMinSdk
     targetSdk = Consts.androidTargetSdk
 
-    sourceSets["main"].java.srcDir("src/androidMain/java")
     ndkVersion = Consts.androidNdk
     ndk.abiFilters = Consts.ndkAbis
+
+    sourceSets.main.java.srcDirs = [
+        "src/main/java",
+        "${rootProject.projectDir}/generated-src/java",
+    ]
 
     externalNativeBuild {
       cmake {
@@ -19,7 +26,7 @@ android {
         arguments '-DANDROID_STL=c++_shared',
             '-DNO_WEBSOCKET=ON', '-DNO_MEDIA=ON',
             '-DNO_EXAMPLES=ON', '-DNO_TESTS=ON'
-        targets 'datachannel'
+        targets 'datachannel', 'datachannel_jni'
       }
     }
   }
@@ -31,7 +38,7 @@ android {
 
   externalNativeBuild {
     cmake {
-      path file('../libdatachannel/CMakeLists.txt')
+      path file('src/main/cpp/CMakeLists.txt')
       version '3.22.1'
     }
   }
@@ -40,5 +47,7 @@ android {
 }
 
 dependencies {
-  implementation 'com.android.ndk.thirdparty:openssl:1.1.1q-beta-1'
+  implementation "com.android.ndk.thirdparty:openssl:1.1.1q-beta-1"
+
+  implementation "androidx.annotation:annotation:1.6.0"
 }

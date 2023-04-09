@@ -13,3 +13,5 @@ xcuserdata
 **.podspec
 Podfile.lock
 Pods
+
+djinni-output-temp

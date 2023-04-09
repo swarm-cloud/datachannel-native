@@ -26,3 +26,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "data-channel"
 include(":data-channel-android")
+include(":example:libDC")
+include(":example:libWebRTC")

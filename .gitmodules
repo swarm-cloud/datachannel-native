@@ -1,3 +1,6 @@
 [submodule "libdatachannel"]
 	path = libdatachannel
 	url = https://github.com/HackWebRTC/libdatachannel.git
+[submodule "djinni"]
+	path = djinni
+	url = https://github.com/dropbox/djinni.git
