@@ -76,13 +76,17 @@ static rtc::Configuration toRtcConfig(const Configuration& config) {
     rtc::Configuration rtcConfig;
 
     for (auto& server: config.iceServers) {
-        rtc::IceServer iceServer(server.hostname, server.port);
-        iceServer.type = toRtcIceServerType(server.type);
-        iceServer.username = server.username;
-        iceServer.password = server.password;
-        iceServer.relayType = toRtcIceServerRelayType(server.relayType);
+        if (server.url) {
+            rtcConfig.iceServers.emplace_back(server.url.value());
+        } else {
+            rtc::IceServer iceServer(server.hostname, server.port);
+            iceServer.type = toRtcIceServerType(server.type);
+            iceServer.username = server.username;
+            iceServer.password = server.password;
+            iceServer.relayType = toRtcIceServerRelayType(server.relayType);
 
-        rtcConfig.iceServers.emplace_back(iceServer);
+            rtcConfig.iceServers.emplace_back(iceServer);
+        }
     }
     if (config.proxyServer) {
         rtcConfig.proxyServer = rtc::ProxyServer(toRtcProxyServerType(config.proxyServer->type),

@@ -6,18 +6,22 @@
 #import <Foundation/Foundation.h>
 
 @interface DCIceServer : NSObject
-- (nonnull instancetype)initWithHostname:(nonnull NSString *)hostname
+- (nonnull instancetype)initWithUrl:(nullable NSString *)url
+                           hostname:(nonnull NSString *)hostname
+                               port:(int16_t)port
+                               type:(DCIceServerType)type
+                           username:(nonnull NSString *)username
+                           password:(nonnull NSString *)password
+                          relayType:(DCIceServerRelayType)relayType;
++ (nonnull instancetype)IceServerWithUrl:(nullable NSString *)url
+                                hostname:(nonnull NSString *)hostname
                                     port:(int16_t)port
                                     type:(DCIceServerType)type
                                 username:(nonnull NSString *)username
                                 password:(nonnull NSString *)password
                                relayType:(DCIceServerRelayType)relayType;
-+ (nonnull instancetype)IceServerWithHostname:(nonnull NSString *)hostname
-                                         port:(int16_t)port
-                                         type:(DCIceServerType)type
-                                     username:(nonnull NSString *)username
-                                     password:(nonnull NSString *)password
-                                    relayType:(DCIceServerRelayType)relayType;
+
+@property (nonatomic, readonly, nullable) NSString * url;
 
 @property (nonatomic, readonly, nonnull) NSString * hostname;
 

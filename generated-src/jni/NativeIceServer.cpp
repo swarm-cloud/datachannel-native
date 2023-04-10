@@ -15,6 +15,7 @@ NativeIceServer::~NativeIceServer() = default;
 auto NativeIceServer::fromCpp(JNIEnv* jniEnv, const CppType& c) -> ::djinni::LocalRef<JniType> {
     const auto& data = ::djinni::JniClass<NativeIceServer>::get();
     auto r = ::djinni::LocalRef<JniType>{jniEnv->NewObject(data.clazz.get(), data.jconstructor,
+                                                           ::djinni::get(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(jniEnv, c.url)),
                                                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c.hostname)),
                                                            ::djinni::get(::djinni::I16::fromCpp(jniEnv, c.port)),
                                                            ::djinni::get(::djinni_generated::NativeIceServerType::fromCpp(jniEnv, c.type)),
@@ -26,10 +27,11 @@ auto NativeIceServer::fromCpp(JNIEnv* jniEnv, const CppType& c) -> ::djinni::Loc
 }
 
 auto NativeIceServer::toCpp(JNIEnv* jniEnv, JniType j) -> CppType {
-    ::djinni::JniLocalScope jscope(jniEnv, 7);
+    ::djinni::JniLocalScope jscope(jniEnv, 8);
     assert(j != nullptr);
     const auto& data = ::djinni::JniClass<NativeIceServer>::get();
-    return {::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mHostname)),
+    return {::djinni::Optional<std::optional, ::djinni::String>::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mUrl)),
+            ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mHostname)),
             ::djinni::I16::toCpp(jniEnv, jniEnv->GetShortField(j, data.field_mPort)),
             ::djinni_generated::NativeIceServerType::toCpp(jniEnv, jniEnv->GetObjectField(j, data.field_mType)),
             ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mUsername)),

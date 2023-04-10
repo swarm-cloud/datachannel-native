@@ -6,12 +6,14 @@
 #include "IceServerRelayType.hpp"
 #include "IceServerType.hpp"
 #include <cstdint>
+#include <optional>
 #include <string>
 #include <utility>
 
 namespace libdc {
 
 struct IceServer final {
+    std::optional<std::string> url;
     std::string hostname;
     int16_t port;
     IceServerType type;
@@ -19,13 +21,15 @@ struct IceServer final {
     std::string password;
     IceServerRelayType relayType;
 
-    IceServer(std::string hostname_,
+    IceServer(std::optional<std::string> url_,
+              std::string hostname_,
               int16_t port_,
               IceServerType type_,
               std::string username_,
               std::string password_,
               IceServerRelayType relayType_)
-    : hostname(std::move(hostname_))
+    : url(std::move(url_))
+    , hostname(std::move(hostname_))
     , port(std::move(port_))
     , type(std::move(type_))
     , username(std::move(username_))

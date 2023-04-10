@@ -1,6 +1,8 @@
 package com.cdnbye.libdc
 
 import com.cdnbye.libdc.CertificateType.DEFAULT
+import com.cdnbye.libdc.IceServerRelayType.TURNTCP
+import com.cdnbye.libdc.IceServerType.STUN
 import com.cdnbye.libdc.ReliabilityType.RELIABLE
 import com.cdnbye.libdc.TransportPolicy.ALL
 
@@ -14,6 +16,18 @@ class LibDC {
       System.loadLibrary("datachannel_jni")
     }
   }
+}
+
+fun rtcIceServer(
+  url: String? = null,
+  hostname: String = "",
+  port: Short = 0,
+  type: IceServerType = STUN,
+  username: String = "",
+  password: String = "",
+  relayType: IceServerRelayType = TURNTCP,
+): IceServer {
+  return IceServer(url, hostname, port, type, username, password, relayType)
 }
 
 fun rtcConfiguration(

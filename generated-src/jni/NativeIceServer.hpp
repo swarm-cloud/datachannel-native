@@ -25,7 +25,8 @@ private:
     friend ::djinni::JniClass<NativeIceServer>;
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/cdnbye/libdc/IceServer") };
-    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(Ljava/lang/String;SLcom/cdnbye/libdc/IceServerType;Ljava/lang/String;Ljava/lang/String;Lcom/cdnbye/libdc/IceServerRelayType;)V") };
+    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(Ljava/lang/String;Ljava/lang/String;SLcom/cdnbye/libdc/IceServerType;Ljava/lang/String;Ljava/lang/String;Lcom/cdnbye/libdc/IceServerRelayType;)V") };
+    const jfieldID field_mUrl { ::djinni::jniGetFieldID(clazz.get(), "mUrl", "Ljava/lang/String;") };
     const jfieldID field_mHostname { ::djinni::jniGetFieldID(clazz.get(), "mHostname", "Ljava/lang/String;") };
     const jfieldID field_mPort { ::djinni::jniGetFieldID(clazz.get(), "mPort", "S") };
     const jfieldID field_mType { ::djinni::jniGetFieldID(clazz.get(), "mType", "Lcom/cdnbye/libdc/IceServerType;") };

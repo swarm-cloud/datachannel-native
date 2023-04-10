@@ -12,7 +12,8 @@ namespace djinni_generated {
 auto IceServer::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
-    return {::djinni::String::toCpp(obj.hostname),
+    return {::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.url),
+            ::djinni::String::toCpp(obj.hostname),
             ::djinni::I16::toCpp(obj.port),
             ::djinni::Enum<::libdc::IceServerType, DCIceServerType>::toCpp(obj.type),
             ::djinni::String::toCpp(obj.username),
@@ -22,12 +23,13 @@ auto IceServer::toCpp(ObjcType obj) -> CppType
 
 auto IceServer::fromCpp(const CppType& cpp) -> ObjcType
 {
-    return [[DCIceServer alloc] initWithHostname:(::djinni::String::fromCpp(cpp.hostname))
-                                            port:(::djinni::I16::fromCpp(cpp.port))
-                                            type:(::djinni::Enum<::libdc::IceServerType, DCIceServerType>::fromCpp(cpp.type))
-                                        username:(::djinni::String::fromCpp(cpp.username))
-                                        password:(::djinni::String::fromCpp(cpp.password))
-                                       relayType:(::djinni::Enum<::libdc::IceServerRelayType, DCIceServerRelayType>::fromCpp(cpp.relayType))];
+    return [[DCIceServer alloc] initWithUrl:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.url))
+                                   hostname:(::djinni::String::fromCpp(cpp.hostname))
+                                       port:(::djinni::I16::fromCpp(cpp.port))
+                                       type:(::djinni::Enum<::libdc::IceServerType, DCIceServerType>::fromCpp(cpp.type))
+                                   username:(::djinni::String::fromCpp(cpp.username))
+                                   password:(::djinni::String::fromCpp(cpp.password))
+                                  relayType:(::djinni::Enum<::libdc::IceServerRelayType, DCIceServerRelayType>::fromCpp(cpp.relayType))];
 }
 
 }  // namespace djinni_generated

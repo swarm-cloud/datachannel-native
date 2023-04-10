@@ -11,6 +11,7 @@ IceServerRelayType = enum {
 }
 
 IceServer = record {
+    url: optional<string>;
     hostname: string;
     port: i16;
     type: IceServerType;

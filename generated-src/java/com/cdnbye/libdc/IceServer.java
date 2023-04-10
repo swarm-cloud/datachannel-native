@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 public final class IceServer {
 
 
+    /*package*/ final String mUrl;
+
     /*package*/ final String mHostname;
 
     /*package*/ final short mPort;
@@ -22,18 +24,25 @@ public final class IceServer {
     /*package*/ final IceServerRelayType mRelayType;
 
     public IceServer(
+            @Nullable String url,
             @NonNull String hostname,
             short port,
             @NonNull IceServerType type,
             @NonNull String username,
             @NonNull String password,
             @NonNull IceServerRelayType relayType) {
+        this.mUrl = url;
         this.mHostname = hostname;
         this.mPort = port;
         this.mType = type;
         this.mUsername = username;
         this.mPassword = password;
         this.mRelayType = relayType;
+    }
+
+    @Nullable
+    public String getUrl() {
+        return mUrl;
     }
 
     @NonNull
@@ -68,7 +77,8 @@ public final class IceServer {
     @Override
     public String toString() {
         return "IceServer{" +
-                "mHostname=" + mHostname +
+                "mUrl=" + mUrl +
+                "," + "mHostname=" + mHostname +
                 "," + "mPort=" + mPort +
                 "," + "mType=" + mType +
                 "," + "mUsername=" + mUsername +

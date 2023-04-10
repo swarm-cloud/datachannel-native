@@ -6,14 +6,16 @@
 
 @implementation DCIceServer
 
-- (nonnull instancetype)initWithHostname:(nonnull NSString *)hostname
-                                    port:(int16_t)port
-                                    type:(DCIceServerType)type
-                                username:(nonnull NSString *)username
-                                password:(nonnull NSString *)password
-                               relayType:(DCIceServerRelayType)relayType
+- (nonnull instancetype)initWithUrl:(nullable NSString *)url
+                           hostname:(nonnull NSString *)hostname
+                               port:(int16_t)port
+                               type:(DCIceServerType)type
+                           username:(nonnull NSString *)username
+                           password:(nonnull NSString *)password
+                          relayType:(DCIceServerRelayType)relayType
 {
     if (self = [super init]) {
+        _url = [url copy];
         _hostname = [hostname copy];
         _port = port;
         _type = type;
@@ -24,24 +26,26 @@
     return self;
 }
 
-+ (nonnull instancetype)IceServerWithHostname:(nonnull NSString *)hostname
-                                         port:(int16_t)port
-                                         type:(DCIceServerType)type
-                                     username:(nonnull NSString *)username
-                                     password:(nonnull NSString *)password
-                                    relayType:(DCIceServerRelayType)relayType
++ (nonnull instancetype)IceServerWithUrl:(nullable NSString *)url
+                                hostname:(nonnull NSString *)hostname
+                                    port:(int16_t)port
+                                    type:(DCIceServerType)type
+                                username:(nonnull NSString *)username
+                                password:(nonnull NSString *)password
+                               relayType:(DCIceServerRelayType)relayType
 {
-    return [(DCIceServer*)[self alloc] initWithHostname:hostname
-                                                   port:port
-                                                   type:type
-                                               username:username
-                                               password:password
-                                              relayType:relayType];
+    return [(DCIceServer*)[self alloc] initWithUrl:url
+                                          hostname:hostname
+                                              port:port
+                                              type:type
+                                          username:username
+                                          password:password
+                                         relayType:relayType];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p hostname:%@ port:%@ type:%@ username:%@ password:%@ relayType:%@>", self.class, (void *)self, self.hostname, @(self.port), @(self.type), self.username, self.password, @(self.relayType)];
+    return [NSString stringWithFormat:@"<%@ %p url:%@ hostname:%@ port:%@ type:%@ username:%@ password:%@ relayType:%@>", self.class, (void *)self, self.url, self.hostname, @(self.port), @(self.type), self.username, self.password, @(self.relayType)];
 }
 
 @end
