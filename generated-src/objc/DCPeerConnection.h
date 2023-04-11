@@ -11,6 +11,7 @@
 @protocol DCGatheringStateCallback;
 @protocol DCIceStateCallback;
 @protocol DCSdpCallback;
+@protocol DCSignalingStateCallback;
 
 
 @interface DCPeerConnection : NSObject
@@ -29,6 +30,8 @@
 - (void)onStateChange:(nullable id<DCIceStateCallback>)callback;
 
 - (void)onGatheringStateChange:(nullable id<DCGatheringStateCallback>)callback;
+
+- (void)onSignalingStateChange:(nullable id<DCSignalingStateCallback>)callback;
 
 - (void)onDataChannel:(nullable id<DCDcCallback>)callback;
 

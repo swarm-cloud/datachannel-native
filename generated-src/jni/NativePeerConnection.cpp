@@ -11,6 +11,7 @@
 #include "NativeGatheringStateCallback.hpp"
 #include "NativeIceStateCallback.hpp"
 #include "NativeSdpCallback.hpp"
+#include "NativeSignalingStateCallback.hpp"
 
 namespace djinni_generated {
 
@@ -88,6 +89,15 @@ CJNIEXPORT void JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_nativ
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
         ref->onGatheringStateChange(::djinni_generated::NativeGatheringStateCallback::toCpp(jniEnv, j_callback));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT void JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1onSignalingStateChange(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_callback)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        ref->onSignalingStateChange(::djinni_generated::NativeSignalingStateCallback::toCpp(jniEnv, j_callback));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 

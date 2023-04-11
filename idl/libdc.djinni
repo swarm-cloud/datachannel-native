@@ -151,6 +151,18 @@ GatheringStateCallback = interface +j +o {
     onStateChanged(state: GatheringState);
 }
 
+SignalingState = enum {
+    Stable;
+    HaveLocalOffer;
+    HaveRemoteOffer;
+    HaveLocalPranswer;
+    HaveRemotePranswer;
+}
+
+SignalingStateCallback = interface +j +o {
+    onStateChanged(state: SignalingState);
+}
+
 DcCallback = interface +j +o {
     onDataChannel(dc: DataChannel);
 }
@@ -164,6 +176,7 @@ PeerConnection = interface +c {
     onLocalCandidate(callback: CandidateCallback);
     onStateChange(callback: IceStateCallback);
     onGatheringStateChange(callback: GatheringStateCallback);
+    onSignalingStateChange(callback: SignalingStateCallback);
 
     onDataChannel(callback: DcCallback);
     createDataChannel(label: string, init: DataChannelInit): DataChannel;

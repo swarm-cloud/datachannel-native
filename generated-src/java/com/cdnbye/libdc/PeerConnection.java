@@ -22,6 +22,8 @@ public interface PeerConnection {
 
     public void onGatheringStateChange(@Nullable GatheringStateCallback callback);
 
+    public void onSignalingStateChange(@Nullable SignalingStateCallback callback);
+
     public void onDataChannel(@Nullable DcCallback callback);
 
     @Nullable
@@ -111,6 +113,14 @@ public interface PeerConnection {
             native_onGatheringStateChange(this.nativeRef, callback);
         }
         private native void native_onGatheringStateChange(long _nativeRef, GatheringStateCallback callback);
+
+        @Override
+        public void onSignalingStateChange(SignalingStateCallback callback)
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_onSignalingStateChange(this.nativeRef, callback);
+        }
+        private native void native_onSignalingStateChange(long _nativeRef, SignalingStateCallback callback);
 
         @Override
         public void onDataChannel(DcCallback callback)

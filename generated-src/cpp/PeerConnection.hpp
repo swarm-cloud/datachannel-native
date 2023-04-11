@@ -14,6 +14,7 @@ class DcCallback;
 class GatheringStateCallback;
 class IceStateCallback;
 class SdpCallback;
+class SignalingStateCallback;
 struct Configuration;
 struct DataChannelInit;
 
@@ -34,6 +35,8 @@ public:
     virtual void onStateChange(const std::shared_ptr<IceStateCallback> & callback) = 0;
 
     virtual void onGatheringStateChange(const std::shared_ptr<GatheringStateCallback> & callback) = 0;
+
+    virtual void onSignalingStateChange(const std::shared_ptr<SignalingStateCallback> & callback) = 0;
 
     virtual void onDataChannel(const std::shared_ptr<DcCallback> & callback) = 0;
 

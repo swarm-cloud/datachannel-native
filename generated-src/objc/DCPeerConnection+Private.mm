@@ -11,6 +11,7 @@
 #import "DCGatheringStateCallback+Private.h"
 #import "DCIceStateCallback+Private.h"
 #import "DCSdpCallback+Private.h"
+#import "DCSignalingStateCallback+Private.h"
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
@@ -79,6 +80,12 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)onGatheringStateChange:(nullable id<DCGatheringStateCallback>)callback {
     try {
         _cppRefHandle.get()->onGatheringStateChange(::djinni_generated::GatheringStateCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)onSignalingStateChange:(nullable id<DCSignalingStateCallback>)callback {
+    try {
+        _cppRefHandle.get()->onSignalingStateChange(::djinni_generated::SignalingStateCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

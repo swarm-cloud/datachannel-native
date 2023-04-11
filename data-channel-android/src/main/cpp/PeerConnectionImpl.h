@@ -29,6 +29,8 @@ public:
 
     void onGatheringStateChange(const std::shared_ptr<GatheringStateCallback>& callback) override;
 
+    void onSignalingStateChange(const std::shared_ptr<SignalingStateCallback>& callback) override;
+
     void onDataChannel(const std::shared_ptr<DcCallback>& callback) override;
 
     std::shared_ptr<DataChannel> createDataChannel(const std::string& label,

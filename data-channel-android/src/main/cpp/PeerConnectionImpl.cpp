@@ -7,6 +7,7 @@
 
 #include "IceState.hpp"
 #include "GatheringState.hpp"
+#include "SignalingState.hpp"
 #include "Configuration.hpp"
 #include "DataChannelInit.hpp"
 
@@ -14,6 +15,7 @@
 #include "CandidateCallback.hpp"
 #include "IceStateCallback.hpp"
 #include "GatheringStateCallback.hpp"
+#include "SignalingStateCallback.hpp"
 #include "DcCallback.hpp"
 
 namespace libdc {
@@ -168,6 +170,22 @@ static GatheringState fromRtcGatheringState(rtc::PeerConnection::GatheringState 
     }
 }
 
+static SignalingState fromRtcSignalingState(rtc::PeerConnection::SignalingState state) {
+    switch (state) {
+        case rtc::PeerConnection::SignalingState::HaveLocalOffer:
+            return SignalingState::HAVELOCALOFFER;
+        case rtc::PeerConnection::SignalingState::HaveRemoteOffer:
+            return SignalingState::HAVEREMOTEOFFER;
+        case rtc::PeerConnection::SignalingState::HaveLocalPranswer:
+            return SignalingState::HAVELOCALPRANSWER;
+        case rtc::PeerConnection::SignalingState::HaveRemotePranswer:
+            return SignalingState::HAVEREMOTEPRANSWER;
+        case rtc::PeerConnection::SignalingState::Stable:
+        default:
+            return SignalingState::STABLE;
+    }
+}
+
 std::shared_ptr<PeerConnection> PeerConnection::create(const Configuration& config) {
     return std::make_shared<PeerConnectionImpl>(config);
 }
@@ -209,6 +227,13 @@ void PeerConnectionImpl::onGatheringStateChange(
         const std::shared_ptr<GatheringStateCallback>& callback) {
     pc_.onGatheringStateChange([callback](rtc::PeerConnection::GatheringState state) {
         callback->onStateChanged(fromRtcGatheringState(state));
+    });
+}
+
+void PeerConnectionImpl::onSignalingStateChange(
+        const std::shared_ptr<SignalingStateCallback>& callback) {
+    pc_.onSignalingStateChange([callback](rtc::PeerConnection::SignalingState state) {
+        callback->onStateChanged(fromRtcSignalingState(state));
     });
 }
 
