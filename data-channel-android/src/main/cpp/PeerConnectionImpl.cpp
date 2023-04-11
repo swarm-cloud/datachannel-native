@@ -5,18 +5,25 @@
 #include "PeerConnectionImpl.h"
 #include "DataChannelImpl.h"
 
-#include "IceState.hpp"
-#include "GatheringState.hpp"
-#include "SignalingState.hpp"
 #include "Configuration.hpp"
-#include "DataChannelInit.hpp"
 
 #include "SdpCallback.hpp"
 #include "CandidateCallback.hpp"
+
+#include "IceState.hpp"
 #include "IceStateCallback.hpp"
+
+#include "GatheringState.hpp"
 #include "GatheringStateCallback.hpp"
+
+#include "SignalingState.hpp"
 #include "SignalingStateCallback.hpp"
+
+#include "DataChannelInit.hpp"
 #include "DcCallback.hpp"
+
+#include "LogLevel.hpp"
+#include "LogCallback.hpp"
 
 namespace libdc {
 
@@ -186,8 +193,55 @@ static SignalingState fromRtcSignalingState(rtc::PeerConnection::SignalingState 
     }
 }
 
+static rtc::LogLevel toRtcLogLevel(LogLevel level) {
+    switch (level) {
+        case LogLevel::FATAL:
+            return rtc::LogLevel::Fatal;
+        case LogLevel::ERROR:
+            return rtc::LogLevel::Error;
+        case LogLevel::WARNING:
+            return rtc::LogLevel::Warning;
+        case LogLevel::INFO:
+            return rtc::LogLevel::Info;
+        case LogLevel::DEBUG:
+            return rtc::LogLevel::Debug;
+        case LogLevel::VERBOSE:
+            return rtc::LogLevel::Verbose;
+        case LogLevel::NONE:
+        default:
+            return rtc::LogLevel::None;
+    }
+}
+
+static inline LogLevel fromRtcLogLevel(rtc::LogLevel level) {
+    switch (level) {
+        case rtc::LogLevel::Fatal:
+            return LogLevel::FATAL;
+        case rtc::LogLevel::Error:
+            return LogLevel::ERROR;
+        case rtc::LogLevel::Warning:
+            return LogLevel::WARNING;
+        case rtc::LogLevel::Info:
+            return LogLevel::INFO;
+        case rtc::LogLevel::Debug:
+            return LogLevel::DEBUG;
+        case rtc::LogLevel::Verbose:
+            return LogLevel::VERBOSE;
+        case rtc::LogLevel::None:
+        default:
+            return LogLevel::NONE;
+    }
+}
+
 std::shared_ptr<PeerConnection> PeerConnection::create(const Configuration& config) {
     return std::make_shared<PeerConnectionImpl>(config);
+}
+
+void PeerConnection::initLogger(LogLevel level, const std::shared_ptr<LogCallback>& callback) {
+    rtc::InitLogger(toRtcLogLevel(level),
+                    [callback](rtc::LogLevel l, const std::string& message) {
+                        callback->onLog(fromRtcLogLevel(l), message);
+                    });
 }
 
 PeerConnectionImpl::PeerConnectionImpl(const Configuration& config) : pc_(toRtcConfig(config)) {

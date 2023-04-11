@@ -10,6 +10,8 @@
 #import "DCDcCallback+Private.h"
 #import "DCGatheringStateCallback+Private.h"
 #import "DCIceStateCallback+Private.h"
+#import "DCLogCallback+Private.h"
+#import "DCLogLevel+Private.h"
 #import "DCSdpCallback+Private.h"
 #import "DCSignalingStateCallback+Private.h"
 #import "DJICppWrapperCache+Private.h"
@@ -108,6 +110,14 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         auto objcpp_result_ = ::libdc::PeerConnection::create(::djinni_generated::Configuration::toCpp(config));
         return ::djinni_generated::PeerConnection::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
++ (void)initLogger:(DCLogLevel)level
+          callback:(nullable id<DCLogCallback>)callback {
+    try {
+        ::libdc::PeerConnection::initLogger(::djinni::Enum<::libdc::LogLevel, DCLogLevel>::toCpp(level),
+                                            ::djinni_generated::LogCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

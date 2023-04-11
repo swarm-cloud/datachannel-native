@@ -35,6 +35,12 @@ public interface PeerConnection {
         return CppProxy.create(config);
     }
 
+    public static void initLogger(@NonNull LogLevel level, @Nullable LogCallback callback)
+    {
+        CppProxy.initLogger(level,
+                            callback);
+    }
+
     static final class CppProxy implements PeerConnection
     {
         private final long nativeRef;
@@ -140,5 +146,7 @@ public interface PeerConnection {
 
         @Nullable
         public static native PeerConnection create(@NonNull Configuration config);
+
+        public static native void initLogger(@NonNull LogLevel level, @Nullable LogCallback callback);
     }
 }

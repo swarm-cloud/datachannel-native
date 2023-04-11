@@ -1,3 +1,18 @@
+# log
+LogLevel = enum {
+    None;
+    Fatal;
+    Error;
+    Warning;
+    Info;
+    Debug;
+    Verbose;
+}
+
+LogCallback = interface +j +o {
+    onLog(level: LogLevel, message: string);
+}
+
 # config start
 IceServerType = enum {
     Stun;
@@ -182,4 +197,5 @@ PeerConnection = interface +c {
     createDataChannel(label: string, init: DataChannelInit): DataChannel;
 
     static create(config: Configuration): PeerConnection;
+    static initLogger(level: LogLevel, callback: LogCallback);
 }

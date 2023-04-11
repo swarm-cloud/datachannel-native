@@ -3,6 +3,7 @@
 
 #import "DCConfiguration.h"
 #import "DCDataChannelInit.h"
+#import "DCLogLevel.h"
 #import <Foundation/Foundation.h>
 @class DCDataChannel;
 @class DCPeerConnection;
@@ -10,6 +11,7 @@
 @protocol DCDcCallback;
 @protocol DCGatheringStateCallback;
 @protocol DCIceStateCallback;
+@protocol DCLogCallback;
 @protocol DCSdpCallback;
 @protocol DCSignalingStateCallback;
 
@@ -39,5 +41,8 @@
                                          init:(nonnull DCDataChannelInit *)init;
 
 + (nullable DCPeerConnection *)create:(nonnull DCConfiguration *)config;
+
++ (void)initLogger:(DCLogLevel)level
+          callback:(nullable id<DCLogCallback>)callback;
 
 @end

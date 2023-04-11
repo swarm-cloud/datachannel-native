@@ -15,6 +15,10 @@ class LibDC {
       System.loadLibrary("datachannel")
       System.loadLibrary("datachannel_jni")
     }
+
+    fun initLogger(level: LogLevel, callback: LogCallback) {
+      PeerConnection.initLogger(level, callback)
+    }
   }
 }
 

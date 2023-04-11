@@ -12,6 +12,8 @@ FOUNDATION_EXPORT double LibDCBridgingHeaderVersionNumber;
 //! Project version string for LibDCBridgingHeader.
 FOUNDATION_EXPORT const unsigned char LibDCBridgingHeaderVersionString[];
 
+#import "DCLogLevel.h"
+#import "DCLogCallback.h"
 #import "DCIceServerType.h"
 #import "DCIceServerRelayType.h"
 #import "DCIceServer.h"

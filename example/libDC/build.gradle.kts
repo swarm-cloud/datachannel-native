@@ -10,7 +10,7 @@ android {
     compileSdk = Consts.androidCompileSdk
     defaultConfig {
         applicationId = "com.cdnbye.dc_perf.libdc"
-        minSdk = Consts.androidMinSdk
+        minSdk = 21
         targetSdk = Consts.androidTargetSdk
         versionCode = 1
         versionName = "1.0"

@@ -10,6 +10,8 @@
 #include "NativeDcCallback.hpp"
 #include "NativeGatheringStateCallback.hpp"
 #include "NativeIceStateCallback.hpp"
+#include "NativeLogCallback.hpp"
+#include "NativeLogLevel.hpp"
 #include "NativeSdpCallback.hpp"
 #include "NativeSignalingStateCallback.hpp"
 
@@ -128,6 +130,15 @@ CJNIEXPORT jobject JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_cr
         auto r = ::libdc::PeerConnection::create(::djinni_generated::NativeConfiguration::toCpp(jniEnv, j_config));
         return ::djinni::release(::djinni_generated::NativePeerConnection::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT void JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_initLogger(JNIEnv* jniEnv, jobject /*this*/, jobject j_level, jobject j_callback)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE0(jniEnv);
+        ::libdc::PeerConnection::initLogger(::djinni_generated::NativeLogLevel::toCpp(jniEnv, j_level),
+                                            ::djinni_generated::NativeLogCallback::toCpp(jniEnv, j_callback));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
 }  // namespace djinni_generated

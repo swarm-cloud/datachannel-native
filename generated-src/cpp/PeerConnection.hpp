@@ -13,8 +13,10 @@ class DataChannel;
 class DcCallback;
 class GatheringStateCallback;
 class IceStateCallback;
+class LogCallback;
 class SdpCallback;
 class SignalingStateCallback;
+enum class LogLevel;
 struct Configuration;
 struct DataChannelInit;
 
@@ -43,6 +45,8 @@ public:
     virtual std::shared_ptr<DataChannel> createDataChannel(const std::string & label, const DataChannelInit & init) = 0;
 
     static std::shared_ptr<PeerConnection> create(const Configuration & config);
+
+    static void initLogger(LogLevel level, const std::shared_ptr<LogCallback> & callback);
 };
 
 }  // namespace libdc
