@@ -94,7 +94,8 @@ class MainActivity : ComponentActivity() {
             TestText(text = "libDC")
 
             Button(onClick = {
-              testDc()
+              //testDc()
+              LibDC.test(false, 100, 100 * 100)
             }) {
               TestText(text = "test")
             }

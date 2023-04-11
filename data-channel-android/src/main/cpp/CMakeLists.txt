@@ -10,7 +10,7 @@ file(GLOB_RECURSE djinni_src "${PRJ_ROOT}/djinni/support-lib/jni/*.cpp")
 file(GLOB_RECURSE generated_src "${PRJ_ROOT}/generated-src/jni/*.cpp")
 
 add_library(${CMAKE_PROJECT_NAME} SHARED
-        #libdc.cpp
+        libdc.cpp
         PeerConnectionImpl.cpp
         DataChannelImpl.cpp
 

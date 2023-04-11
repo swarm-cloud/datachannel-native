@@ -15,6 +15,8 @@ class LibDC {
       System.loadLibrary("datachannel")
       System.loadLibrary("datachannel_jni")
     }
+
+    external fun test(log: Boolean = true, pcCount: Int = 1, msgCount: Int = 1)
   }
 }
 

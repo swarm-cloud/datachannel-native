@@ -10,7 +10,7 @@ android {
     compileSdk = Consts.androidCompileSdk
     defaultConfig {
         applicationId = "com.cdnbye.dc_perf.libdc"
-        minSdk = Consts.androidMinSdk
+        minSdk = 21
         targetSdk = Consts.androidTargetSdk
         versionCode = 1
         versionName = "1.0"
@@ -37,8 +37,8 @@ android {
 }
 
 dependencies {
-//    implementation(project(":data-channel-android"))
-    implementation(files("$rootDir/libs/data-channel-android-release.aar"))
+    implementation(project(":data-channel-android"))
+//    implementation(files("$rootDir/libs/data-channel-android-release.aar"))
     implementation(AndroidX.compose.ui)
     implementation(AndroidX.compose.ui.tooling)
     implementation(AndroidX.compose.ui.toolingPreview)
