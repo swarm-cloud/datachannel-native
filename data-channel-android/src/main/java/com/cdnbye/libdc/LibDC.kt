@@ -17,7 +17,9 @@ class LibDC {
     }
 
     fun initLogger(level: LogLevel, callback: LogCallback) {
-      PeerConnection.initLogger(level, callback)
+      // to workaround 'NoSuchMethodError' calling static interface method on pre-API-24,
+      // ref: https://github.com/xamarin/xamarin-android/issues/6784#issuecomment-1091487256
+      PeerConnection.CppProxy.initLogger(level, callback)
     }
   }
 }
@@ -64,6 +66,12 @@ fun rtcConfiguration(
     mtu,
     maxMessageSize
   )
+}
+
+// to workaround 'NoSuchMethodError' calling static interface method on pre-API-24,
+// ref: https://github.com/xamarin/xamarin-android/issues/6784#issuecomment-1091487256
+fun createPeerConnection(config: Configuration): PeerConnection? {
+  return PeerConnection.CppProxy.create(config)
 }
 
 fun PeerConnection.createDataChannel(
