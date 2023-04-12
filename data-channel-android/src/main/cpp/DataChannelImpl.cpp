@@ -32,7 +32,7 @@ bool DataChannelImpl::isOpen() {
 }
 
 bool DataChannelImpl::isClosed() {
-    return dc_ || dc_->isClosed();
+    return dc_ && dc_->isClosed();
 }
 
 int32_t DataChannelImpl::maxMessageSize() {
