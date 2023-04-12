@@ -47,14 +47,14 @@ elif [ $# -eq 1 ]; then
 fi
 
 # Build djinni
-"$base_dir/djinni/src/build"
+"$base_dir/djinni/src/build.sh"
 
 [ ! -e "$temp_out" ] || rm -r "$temp_out"
 "$base_dir/djinni/src/run-assume-built" \
     --java-out "$temp_out/java" \
     --java-package $java_package \
     --java-class-access-modifier "public" \
-    --java-generate-interfaces true \
+    --java-gen-interface true \
     --java-nullable-annotation "androidx.annotation.Nullable" \
     --java-nonnull-annotation "androidx.annotation.NonNull" \
     --ident-java-field mFooBar \

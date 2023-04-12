@@ -6,7 +6,11 @@ set(PRJ_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../")
 
 add_subdirectory("${PRJ_ROOT}/libdatachannel" "libdatachannel")
 
-file(GLOB_RECURSE djinni_src "${PRJ_ROOT}/djinni/support-lib/jni/*.cpp")
+#file(GLOB_RECURSE djinni_src "${PRJ_ROOT}/djinni/support-lib/jni/*.cpp")
+set(djinni_src
+        "${PRJ_ROOT}/djinni/support-lib/jni/djinni_main.cpp"
+        "${PRJ_ROOT}/djinni/support-lib/jni/djinni_support.cpp"
+        )
 file(GLOB_RECURSE generated_src "${PRJ_ROOT}/generated-src/jni/*.cpp")
 
 add_library(${CMAKE_PROJECT_NAME} SHARED

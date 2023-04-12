@@ -33,8 +33,8 @@ import com.cdnbye.libdc.DataChannel
 import com.cdnbye.libdc.DcMessageCallback
 import com.cdnbye.libdc.LibDC
 import com.cdnbye.libdc.LogLevel.DEBUG
+import com.cdnbye.libdc.PeerConnection
 import com.cdnbye.libdc.createDataChannel
-import com.cdnbye.libdc.createPeerConnection
 import com.cdnbye.libdc.rtcConfiguration
 
 @Composable
@@ -115,14 +115,14 @@ class MainActivity : ComponentActivity() {
 
   private fun testDc(log: Boolean = true, msgCount: Int = 1) {
     if (log) {
-      LibDC.initLogger(DEBUG) { level, message ->
+      PeerConnection.initLogger(DEBUG) { level, message ->
         Log.e("XXPXX", "$level $message")
       }
     }
 
     val config = rtcConfiguration()
-    val pc1 = createPeerConnection(config)
-    val pc2 = createPeerConnection(config)
+    val pc1 = PeerConnection.create(config)
+    val pc2 = PeerConnection.create(config)
 
     pc1?.onLocalDescription {
       if (log) Log.e("XXPXX", "pc1 onLocalDescription $it")
