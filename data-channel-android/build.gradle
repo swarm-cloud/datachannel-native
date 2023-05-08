@@ -1,6 +1,13 @@
 plugins {
-  id("com.android.library")
-  id("org.jetbrains.kotlin.android")
+  id "org.jetbrains.kotlin.multiplatform"
+  id "com.android.library"
+  id "convention.publication"
+}
+
+kotlin {
+  android() {
+    publishLibraryVariants("release", "debug")
+  }
 }
 
 android {
@@ -34,6 +41,10 @@ android {
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
+  }
+
+  packagingOptions {
+    exclude '**/libc++_shared.so'
   }
 
   buildTypes {
