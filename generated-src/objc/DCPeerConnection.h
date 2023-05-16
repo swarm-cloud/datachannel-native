@@ -3,7 +3,10 @@
 
 #import "DCConfiguration.h"
 #import "DCDataChannelInit.h"
+#import "DCGatheringState.h"
+#import "DCIceState.h"
 #import "DCLogLevel.h"
+#import "DCSignalingState.h"
 #import <Foundation/Foundation.h>
 @class DCDataChannel;
 @class DCPeerConnection;
@@ -34,6 +37,20 @@
 - (void)onGatheringStateChange:(nullable id<DCGatheringStateCallback>)callback;
 
 - (void)onSignalingStateChange:(nullable id<DCSignalingStateCallback>)callback;
+
+- (DCIceState)state;
+
+- (DCGatheringState)gatheringState;
+
+- (DCSignalingState)signalingState;
+
+- (void)clearStats;
+
+- (int32_t)bytesSent;
+
+- (int32_t)bytesReceived;
+
+- (int64_t)rtt;
 
 - (void)onDataChannel:(nullable id<DCDcCallback>)callback;
 

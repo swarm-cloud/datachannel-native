@@ -193,6 +193,15 @@ PeerConnection = interface +c {
     onGatheringStateChange(callback: GatheringStateCallback);
     onSignalingStateChange(callback: SignalingStateCallback);
 
+    state(): IceState;
+    gatheringState(): GatheringState;
+    signalingState(): SignalingState;
+
+    clearStats();
+    bytesSent(): i32;
+    bytesReceived(): i32;
+    rtt(): i64;
+
     onDataChannel(callback: DcCallback);
     createDataChannel(label: string, init: DataChannelInit): DataChannel;
 

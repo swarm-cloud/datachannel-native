@@ -44,7 +44,7 @@ android {
   }
 
   packagingOptions {
-    exclude '**/libc++_shared.so'
+    //exclude '**/libc++_shared.so'
   }
 
   buildTypes {

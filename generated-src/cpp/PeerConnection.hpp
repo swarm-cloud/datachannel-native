@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <cstdint>
 #include <memory>
 #include <string>
 
@@ -16,7 +17,10 @@ class IceStateCallback;
 class LogCallback;
 class SdpCallback;
 class SignalingStateCallback;
+enum class GatheringState;
+enum class IceState;
 enum class LogLevel;
+enum class SignalingState;
 struct Configuration;
 struct DataChannelInit;
 
@@ -39,6 +43,20 @@ public:
     virtual void onGatheringStateChange(const /*not-null*/ std::shared_ptr<GatheringStateCallback> & callback) = 0;
 
     virtual void onSignalingStateChange(const /*not-null*/ std::shared_ptr<SignalingStateCallback> & callback) = 0;
+
+    virtual IceState state() = 0;
+
+    virtual GatheringState gatheringState() = 0;
+
+    virtual SignalingState signalingState() = 0;
+
+    virtual void clearStats() = 0;
+
+    virtual int32_t bytesSent() = 0;
+
+    virtual int32_t bytesReceived() = 0;
+
+    virtual int64_t rtt() = 0;
 
     virtual void onDataChannel(const /*not-null*/ std::shared_ptr<DcCallback> & callback) = 0;
 

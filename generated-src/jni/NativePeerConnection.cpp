@@ -8,11 +8,14 @@
 #include "NativeDataChannel.hpp"
 #include "NativeDataChannelInit.hpp"
 #include "NativeDcCallback.hpp"
+#include "NativeGatheringState.hpp"
 #include "NativeGatheringStateCallback.hpp"
+#include "NativeIceState.hpp"
 #include "NativeIceStateCallback.hpp"
 #include "NativeLogCallback.hpp"
 #include "NativeLogLevel.hpp"
 #include "NativeSdpCallback.hpp"
+#include "NativeSignalingState.hpp"
 #include "NativeSignalingStateCallback.hpp"
 
 namespace djinni_generated {
@@ -92,6 +95,68 @@ CJNIEXPORT void JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_nativ
         const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
         ref->onSignalingStateChange(::djinni_generated::NativeSignalingStateCallback::toCpp(jniEnv, j_callback));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT jobject JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1state(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        auto r = ref->state();
+        return ::djinni::release(::djinni_generated::NativeIceState::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT jobject JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1gatheringState(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        auto r = ref->gatheringState();
+        return ::djinni::release(::djinni_generated::NativeGatheringState::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT jobject JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1signalingState(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        auto r = ref->signalingState();
+        return ::djinni::release(::djinni_generated::NativeSignalingState::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT void JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1clearStats(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        ref->clearStats();
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT jint JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1bytesSent(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        auto r = ref->bytesSent();
+        return ::djinni::release(::djinni::I32::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT jint JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1bytesReceived(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        auto r = ref->bytesReceived();
+        return ::djinni::release(::djinni::I32::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT jlong JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1rtt(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        const auto& ref = ::djinni::objectFromHandleAddress<::libdc::PeerConnection>(nativeRef);
+        auto r = ref->rtt();
+        return ::djinni::release(::djinni::I64::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
 CJNIEXPORT void JNICALL Java_com_cdnbye_libdc_PeerConnection_00024CppProxy_native_1onDataChannel(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_callback)

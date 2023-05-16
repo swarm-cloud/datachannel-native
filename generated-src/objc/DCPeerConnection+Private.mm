@@ -8,11 +8,14 @@
 #import "DCDataChannel+Private.h"
 #import "DCDataChannelInit+Private.h"
 #import "DCDcCallback+Private.h"
+#import "DCGatheringState+Private.h"
 #import "DCGatheringStateCallback+Private.h"
+#import "DCIceState+Private.h"
 #import "DCIceStateCallback+Private.h"
 #import "DCLogCallback+Private.h"
 #import "DCLogLevel+Private.h"
 #import "DCSdpCallback+Private.h"
+#import "DCSignalingState+Private.h"
 #import "DCSignalingStateCallback+Private.h"
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
@@ -88,6 +91,54 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)onSignalingStateChange:(nullable id<DCSignalingStateCallback>)callback {
     try {
         _cppRefHandle.get()->onSignalingStateChange(::djinni_generated::SignalingStateCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (DCIceState)state {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->state();
+        return ::djinni::Enum<::libdc::IceState, DCIceState>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (DCGatheringState)gatheringState {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->gatheringState();
+        return ::djinni::Enum<::libdc::GatheringState, DCGatheringState>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (DCSignalingState)signalingState {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->signalingState();
+        return ::djinni::Enum<::libdc::SignalingState, DCSignalingState>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)clearStats {
+    try {
+        _cppRefHandle.get()->clearStats();
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (int32_t)bytesSent {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->bytesSent();
+        return ::djinni::I32::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (int32_t)bytesReceived {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->bytesReceived();
+        return ::djinni::I32::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (int64_t)rtt {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->rtt();
+        return ::djinni::I64::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

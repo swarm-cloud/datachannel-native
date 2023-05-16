@@ -25,6 +25,23 @@ public abstract class PeerConnection {
 
     public abstract void onSignalingStateChange(@Nullable SignalingStateCallback callback);
 
+    @NonNull
+    public abstract IceState state();
+
+    @NonNull
+    public abstract GatheringState gatheringState();
+
+    @NonNull
+    public abstract SignalingState signalingState();
+
+    public abstract void clearStats();
+
+    public abstract int bytesSent();
+
+    public abstract int bytesReceived();
+
+    public abstract long rtt();
+
     public abstract void onDataChannel(@Nullable DcCallback callback);
 
     @Nullable
@@ -111,6 +128,62 @@ public abstract class PeerConnection {
             native_onSignalingStateChange(this.nativeRef, callback);
         }
         private native void native_onSignalingStateChange(long _nativeRef, SignalingStateCallback callback);
+
+        @Override
+        public IceState state()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_state(this.nativeRef);
+        }
+        private native IceState native_state(long _nativeRef);
+
+        @Override
+        public GatheringState gatheringState()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_gatheringState(this.nativeRef);
+        }
+        private native GatheringState native_gatheringState(long _nativeRef);
+
+        @Override
+        public SignalingState signalingState()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_signalingState(this.nativeRef);
+        }
+        private native SignalingState native_signalingState(long _nativeRef);
+
+        @Override
+        public void clearStats()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_clearStats(this.nativeRef);
+        }
+        private native void native_clearStats(long _nativeRef);
+
+        @Override
+        public int bytesSent()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_bytesSent(this.nativeRef);
+        }
+        private native int native_bytesSent(long _nativeRef);
+
+        @Override
+        public int bytesReceived()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_bytesReceived(this.nativeRef);
+        }
+        private native int native_bytesReceived(long _nativeRef);
+
+        @Override
+        public long rtt()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_rtt(this.nativeRef);
+        }
+        private native long native_rtt(long _nativeRef);
 
         @Override
         public void onDataChannel(DcCallback callback)

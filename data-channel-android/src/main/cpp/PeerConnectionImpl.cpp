@@ -291,6 +291,35 @@ void PeerConnectionImpl::onSignalingStateChange(
     });
 }
 
+IceState PeerConnectionImpl::state() {
+    return fromRtcIceState(pc_.state());
+}
+
+GatheringState PeerConnectionImpl::gatheringState() {
+    return fromRtcGatheringState(pc_.gatheringState());
+}
+
+SignalingState PeerConnectionImpl::signalingState() {
+    return fromRtcSignalingState(pc_.signalingState());
+}
+
+void PeerConnectionImpl::clearStats() {
+    pc_.clearStats();
+}
+
+int32_t PeerConnectionImpl::bytesSent() {
+    return pc_.bytesSent();
+}
+
+int32_t PeerConnectionImpl::bytesReceived() {
+    return pc_.bytesReceived();
+}
+
+int64_t PeerConnectionImpl::rtt() {
+    auto rtt = pc_.rtt();
+    return rtt.has_value() ? rtt->count() : -1;
+}
+
 void PeerConnectionImpl::onDataChannel(const std::shared_ptr<DcCallback>& callback) {
     pc_.onDataChannel([callback](std::shared_ptr<rtc::DataChannel> incoming) {
         callback->onDataChannel(std::make_shared<DataChannelImpl>(incoming));

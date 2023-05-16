@@ -31,6 +31,20 @@ public:
 
     void onSignalingStateChange(const std::shared_ptr<SignalingStateCallback>& callback) override;
 
+    IceState state() override;
+
+    GatheringState gatheringState() override;
+
+    SignalingState signalingState() override;
+
+    void clearStats() override;
+
+    int32_t bytesSent() override;
+
+    int32_t bytesReceived() override;
+
+    int64_t rtt() override;
+
     void onDataChannel(const std::shared_ptr<DcCallback>& callback) override;
 
     std::shared_ptr<DataChannel> createDataChannel(const std::string& label,
