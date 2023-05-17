@@ -47,6 +47,7 @@ elif [ $# -eq 1 ]; then
 fi
 
 # Build djinni
+export BAZEL_EXECUTABLE="bazel --output_base=$HOME/.cache/bazel --output_user_root=$HOME/.cache/bazel_install"
 "$base_dir/djinni/src/build.sh"
 
 [ ! -e "$temp_out" ] || rm -r "$temp_out"
