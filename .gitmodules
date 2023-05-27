@@ -1,6 +1,6 @@
 [submodule "libdatachannel"]
 	path = libdatachannel
-	url = https://github.com/HackWebRTC/libdatachannel.git
+	url = https://github.com/paullouisageneau/libdatachannel.git
 [submodule "djinni"]
 	path = djinni
 	url = https://github.com/Snapchat/djinni.git

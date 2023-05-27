@@ -71,5 +71,5 @@ dependencies {
   implementation(Kotlin.stdlib)
   implementation(AndroidX.annotation)
 
-  implementation "com.android.ndk.thirdparty:openssl:_"
+//  implementation "com.android.ndk.thirdparty:openssl:_"
 }
