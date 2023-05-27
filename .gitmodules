@@ -4,3 +4,6 @@
 [submodule "djinni"]
 	path = djinni
 	url = https://github.com/Snapchat/djinni.git
+[submodule "android-openssl-cmake"]
+	path = android-openssl-cmake
+	url = https://github.com/HackWebRTC/android-openssl-cmake.git

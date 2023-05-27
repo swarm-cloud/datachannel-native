@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
   android() {
-    publishLibraryVariants("release", "debug")
+    publishLibraryVariants("release")
   }
 }
 
@@ -33,9 +33,11 @@ android {
         arguments '-DANDROID_STL=c++_shared',
             '-DNO_WEBSOCKET=ON', '-DNO_MEDIA=ON',
             '-DNO_EXAMPLES=ON', '-DNO_TESTS=ON'
-        targets 'datachannel', 'datachannel_jni'
+        targets 'datachannel-static', 'datachannel_jni'
       }
     }
+
+    consumerProguardFiles 'proguard-consumer-rules.pro'
   }
 
   compileOptions {
@@ -45,6 +47,8 @@ android {
 
   packagingOptions {
     //exclude '**/libc++_shared.so'
+    exclude '**/libcrypto.so'
+    exclude '**/libssl.so'
   }
 
   buildTypes {
@@ -64,9 +68,8 @@ android {
 }
 
 dependencies {
-  implementation("org.jetbrains.kotlin:kotlin-stdlib:${Consts.kotlin}")
+  implementation(Kotlin.stdlib)
+  implementation(AndroidX.annotation)
 
-  implementation "com.android.ndk.thirdparty:openssl:1.1.1q-beta-1"
-
-  implementation "androidx.annotation:annotation:1.0.0"
+  implementation "com.android.ndk.thirdparty:openssl:_"
 }

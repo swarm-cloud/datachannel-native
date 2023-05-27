@@ -12,7 +12,6 @@ import com.cdnbye.libdc.TransportPolicy.ALL
 class LibDC {
   companion object {
     fun initialize() {
-      System.loadLibrary("datachannel")
       System.loadLibrary("datachannel_jni")
     }
   }

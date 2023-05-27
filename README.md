@@ -98,3 +98,13 @@ dc1?.onMessage(object : DcMessageCallback {
     }
 })
 ```
+
+## Development
+
+Before start building, run commands below:
+
+```bash
+git submodule update --recursive --init
+./run_djinni.sh
+./build_openssl_android.sh
+```

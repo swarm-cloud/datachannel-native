@@ -1,8 +1,4 @@
 object Consts {
-  const val agp = "7.3.0"
-
-  const val kotlin = "1.5.21"
-
   const val androidCompileSdk = 33
   const val androidMinSdk = 19
   const val androidTargetSdk = 33
@@ -14,7 +10,7 @@ object Consts {
 
   const val releaseGroup = "com.cdnbye"
   const val releaseName = "data-channel-android"
-  const val releaseVersion = "1.0.2"
+  const val releaseVersion = "1.0.3"
 
   val androidNS = "$releaseGroup.${releaseName.replace('-', '_')}"
 }

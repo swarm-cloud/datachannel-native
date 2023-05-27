@@ -7,6 +7,7 @@ pluginManagement {
 
   plugins {
     // See https://jmfayard.github.io/refreshVersions
+    // ./gradlew refreshVersionsMigrate --mode=VersionsPropertiesOnly
     // ./gradlew refreshVersions
     id("de.fayard.refreshVersions") version "0.51.0"
   }

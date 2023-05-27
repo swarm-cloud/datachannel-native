@@ -1,0 +1,3 @@
+-keep class com.cdnbye.libdc.**{*;}
+-keep interface com.cdnbye.libdc.**{*;}
+-keep class com.snapchat.djinni.**{*;}
