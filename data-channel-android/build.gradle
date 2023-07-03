@@ -29,11 +29,10 @@ android {
 
     externalNativeBuild {
       cmake {
-        cppFlags '-std=c++17'
         arguments '-DANDROID_STL=c++_shared',
             '-DNO_WEBSOCKET=ON', '-DNO_MEDIA=ON',
             '-DNO_EXAMPLES=ON', '-DNO_TESTS=ON'
-        targets 'datachannel-static', 'datachannel_jni'
+        targets 'datachannel-static', 'datachannel_wrapper'
       }
     }
 
@@ -59,7 +58,7 @@ android {
 
   externalNativeBuild {
     cmake {
-      path file('src/main/cpp/CMakeLists.txt')
+      path file('../src/CMakeLists.txt')
       version '3.22.1'
     }
   }

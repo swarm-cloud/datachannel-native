@@ -4,6 +4,7 @@
 
 #include "PeerConnectionImpl.h"
 #include "DataChannelImpl.h"
+#include "LibDC.hpp"
 
 #include "Configuration.hpp"
 
@@ -326,9 +327,13 @@ void PeerConnectionImpl::onDataChannel(const std::shared_ptr<DcCallback>& callba
     });
 }
 
-std::shared_ptr<DataChannel>
-PeerConnectionImpl::createDataChannel(const std::string& label, const DataChannelInit& init) {
+std::shared_ptr<DataChannel> PeerConnectionImpl::createDataChannel(const std::string& label,
+                                                                   const DataChannelInit& init) {
     return std::make_shared<DataChannelImpl>(pc_.createDataChannel(label, toRtcDcInit(init)));
+}
+
+std::string LibDC::version() {
+    return "1.0.4";
 }
 
 } // libdc

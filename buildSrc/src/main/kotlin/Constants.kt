@@ -10,7 +10,7 @@ object Consts {
 
   const val releaseGroup = "com.cdnbye"
   const val releaseName = "data-channel-android"
-  const val releaseVersion = "1.0.3"
+  const val releaseVersion = "1.0.0"
 
   val androidNS = "$releaseGroup.${releaseName.replace('-', '_')}"
 }

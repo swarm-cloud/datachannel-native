@@ -99,6 +99,10 @@ dc1?.onMessage(object : DcMessageCallback {
 })
 ```
 
+## Apple OS family
+
+The API is almost the same as Android, the difference is just the difference between Kotlin and Swift.
+
 ## Development
 
 Before start building, run commands below:
@@ -106,5 +110,14 @@ Before start building, run commands below:
 ```bash
 git submodule update --recursive --init
 ./run_djinni.sh
+
+# for Android
 ./build_openssl_android.sh
+
+# for Apple OS family
+./build_openssl_apple.sh
 ```
+
+For Android development, just open the root project as Android Studio project, then you can run and debug it.
+
+For Apple OS family, run `./build_apple.sh` to build the xcframework.

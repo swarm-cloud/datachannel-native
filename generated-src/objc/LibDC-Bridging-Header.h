@@ -39,3 +39,4 @@ FOUNDATION_EXPORT const unsigned char LibDCBridgingHeaderVersionString[];
 #import "DCSignalingStateCallback.h"
 #import "DCDcCallback.h"
 #import "DCPeerConnection.h"
+#import "DCLibDC.h"

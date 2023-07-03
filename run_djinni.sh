@@ -2,6 +2,8 @@
 set -eu
 shopt -s nullglob
 
+export DEVELOPER_DIR=/Applications/Xcode_14.1.app/Contents/Developer/
+
 # Locate the script file.  Cross symlinks if necessary.
 loc="$0"
 while [ -h "$loc" ]; do
@@ -90,6 +92,9 @@ mirror "cpp" "$temp_out/cpp" "$cpp_out"
 mirror "java" "$temp_out/java" "$java_out"
 mirror "jni" "$temp_out/jni" "$jni_out"
 mirror "objc" "$temp_out/objc" "$objc_out"
+
+cp djinni/support-lib/java/com/snapchat/djinni/NativeObjectManager.java \
+    data-channel-android/src/main/java/com/snapchat/djinni/NativeObjectManager.java
 
 date > "$gen_stamp"
 
