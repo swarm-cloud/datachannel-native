@@ -1,0 +1,17 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name datachannel_wrapper
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Swift
+import _Concurrency
+import _StringProcessing
+@_exported import datachannel_wrapper
+@_hasMissingDesignatedInitializers public class DCLibDC {
+  public class func version() -> Swift.String
+  public class func rtcIceServer(url: Swift.String? = nil, hostname: Swift.String = "", port: Swift.Int16 = 0, type: datachannel_wrapper.DCIceServerType = DCIceServerType.stun, username: Swift.String = "", password: Swift.String = "", relayType: datachannel_wrapper.DCIceServerRelayType = DCIceServerRelayType.turnTcp) -> datachannel_wrapper.DCIceServer
+  public class func rtcConfiguration(iceServers: [datachannel_wrapper.DCIceServer] = [], proxyServer: datachannel_wrapper.DCProxyServer? = nil, bindAddress: Swift.String? = nil, certificateType: datachannel_wrapper.DCCertificateType = DCCertificateType.default, iceTransportPolicy: datachannel_wrapper.DCTransportPolicy = DCTransportPolicy.all, enableIceTcp: Swift.Bool = false, enableIceUdpMux: Swift.Bool = false, disableAutoNegotiation: Swift.Bool = false, forceMediaTransport: Swift.Bool = false, portRangeBegin: Swift.Int32 = 1024, portRangeEnd: Swift.Int32 = 65535, mtu: Foundation.NSNumber? = nil, maxMessageSize: Foundation.NSNumber? = nil) -> datachannel_wrapper.DCConfiguration
+  @objc deinit
+}
+extension datachannel_wrapper.DCPeerConnection {
+  public func createDataChannel(_ label: Swift.String, _ conf: datachannel_wrapper.DCDataChannelInit? = nil) -> datachannel_wrapper.DCDataChannel?
+}

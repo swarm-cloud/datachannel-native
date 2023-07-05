@@ -4,7 +4,7 @@
 
 #include "PeerConnectionImpl.h"
 #include "DataChannelImpl.h"
-#include "LibDC.hpp"
+#include "LibVersion.hpp"
 
 #include "Configuration.hpp"
 
@@ -332,8 +332,6 @@ std::shared_ptr<DataChannel> PeerConnectionImpl::createDataChannel(const std::st
     return std::make_shared<DataChannelImpl>(pc_.createDataChannel(label, toRtcDcInit(init)));
 }
 
-std::string LibDC::version() {
-    return "1.0.4";
-}
+std::string LibVersion::version() { return "1.0.4"; }
 
 } // libdc

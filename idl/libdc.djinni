@@ -209,6 +209,6 @@ PeerConnection = interface +c {
     static initLogger(level: LogLevel, callback: LogCallback);
 }
 
-LibDC = interface +c {
+LibVersion = interface +c {
     static version(): string;
 }

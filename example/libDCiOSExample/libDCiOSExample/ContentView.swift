@@ -71,7 +71,7 @@ struct ContentView: View {
         DispatchQueue.global().async {
             DCPeerConnection.initLogger(DCLogLevel.debug, callback: TestLogCallback())
 
-            let config = rtcConfiguration()
+            let config = DCLibDC.rtcConfiguration()
 
             let pc1 = DCPeerConnection.create(config)
             let pc2 = DCPeerConnection.create(config)
@@ -99,7 +99,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(String(format: "Hello world %@!", DCLibDC.version()))
         }
         .padding()
     }

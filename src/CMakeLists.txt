@@ -75,8 +75,8 @@ else ()
             "${PRJ_ROOT}/generated-src/objc/DCSignalingState.h"
             "${PRJ_ROOT}/generated-src/objc/DCSignalingStateCallback.h"
             "${PRJ_ROOT}/generated-src/objc/DCTransportPolicy.h"
-            "${PRJ_ROOT}/generated-src/objc/DCLibDC.h"
-            "${PRJ_ROOT}/generated-src/objc/LibDC-Bridging-Header.h"
+            "${PRJ_ROOT}/generated-src/objc/DCLibVersion.h"
+            "${PRJ_ROOT}/src/objc/datachannel_wrapper.h"
             )
 
     list(APPEND sources
@@ -117,7 +117,9 @@ else ()
             XCODE_ATTRIBUTE_GCC_GENERATE_DEBUGGING_SYMBOLS "YES"
             XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC "YES"
             XCODE_ATTRIBUTE_BUILD_LIBRARY_FOR_DISTRIBUTION "YES"
-            XCODE_ATTRIBUTE_SWIFT_OBJC_BRIDGING_HEADER "${PRJ_ROOT}/generated-src/objc/LibDC-Bridging-Header.h"
+            XCODE_ATTRIBUTE_DEFINES_MODULE "YES"
+            XCODE_ATTRIBUTE_SWIFT_VERSION "5.0"
+            XCODE_ATTRIBUTE_DEBUG_INFORMATION_FORMAT "dwarf-with-dsym"
             XCODE_ATTRIBUTE_DYLIB_INSTALL_NAME_BASE "@rpath"
             INSTALL_RPATH "@executable_path/Frameworks;@loader_path/Frameworks"
             )

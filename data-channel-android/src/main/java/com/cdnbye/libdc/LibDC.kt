@@ -14,51 +14,53 @@ class LibDC {
     fun initialize() {
       System.loadLibrary("datachannel_wrapper")
     }
+
+    fun version() = LibVersion.version()
+
+    fun rtcIceServer(
+      url: String? = null,
+      hostname: String = "",
+      port: Short = 0,
+      type: IceServerType = STUN,
+      username: String = "",
+      password: String = "",
+      relayType: IceServerRelayType = TURNTCP,
+    ): IceServer {
+      return IceServer(url, hostname, port, type, username, password, relayType)
+    }
+
+    fun rtcConfiguration(
+      iceServers: List<IceServer> = emptyList(),
+      proxyServer: ProxyServer? = null,
+      bindAddress: String? = null,
+      certificateType: CertificateType = DEFAULT,
+      iceTransportPolicy: TransportPolicy = ALL,
+      enableIceTcp: Boolean = false,
+      enableIceUdpMux: Boolean = false,
+      disableAutoNegotiation: Boolean = false,
+      forceMediaTransport: Boolean = false,
+      portRangeBegin: Int = 1024,
+      portRangeEnd: Int = 65535,
+      mtu: Int? = null,
+      maxMessageSize: Int? = null
+    ): Configuration {
+      return Configuration(
+        ArrayList(iceServers),
+        proxyServer,
+        bindAddress,
+        certificateType,
+        iceTransportPolicy,
+        enableIceTcp,
+        enableIceUdpMux,
+        disableAutoNegotiation,
+        forceMediaTransport,
+        portRangeBegin,
+        portRangeEnd,
+        mtu,
+        maxMessageSize
+      )
+    }
   }
-}
-
-fun rtcIceServer(
-  url: String? = null,
-  hostname: String = "",
-  port: Short = 0,
-  type: IceServerType = STUN,
-  username: String = "",
-  password: String = "",
-  relayType: IceServerRelayType = TURNTCP,
-): IceServer {
-  return IceServer(url, hostname, port, type, username, password, relayType)
-}
-
-fun rtcConfiguration(
-  iceServers: List<IceServer> = emptyList(),
-  proxyServer: ProxyServer? = null,
-  bindAddress: String? = null,
-  certificateType: CertificateType = DEFAULT,
-  iceTransportPolicy: TransportPolicy = ALL,
-  enableIceTcp: Boolean = false,
-  enableIceUdpMux: Boolean = false,
-  disableAutoNegotiation: Boolean = false,
-  forceMediaTransport: Boolean = false,
-  portRangeBegin: Int = 1024,
-  portRangeEnd: Int = 65535,
-  mtu: Int? = null,
-  maxMessageSize: Int? = null
-): Configuration {
-  return Configuration(
-    ArrayList(iceServers),
-    proxyServer,
-    bindAddress,
-    certificateType,
-    iceTransportPolicy,
-    enableIceTcp,
-    enableIceUdpMux,
-    disableAutoNegotiation,
-    forceMediaTransport,
-    portRangeBegin,
-    portRangeEnd,
-    mtu,
-    maxMessageSize
-  )
 }
 
 fun PeerConnection.createDataChannel(

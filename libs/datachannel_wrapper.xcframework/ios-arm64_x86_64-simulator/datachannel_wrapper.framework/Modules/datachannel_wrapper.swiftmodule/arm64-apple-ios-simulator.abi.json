@@ -1,0 +1,479 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "DCLibDC",
+        "printedName": "DCLibDC",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "version",
+            "printedName": "version()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19datachannel_wrapper7DCLibDCC7versionSSyFZ",
+            "mangledName": "$s19datachannel_wrapper7DCLibDCC7versionSSyFZ",
+            "moduleName": "datachannel_wrapper",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "rtcIceServer",
+            "printedName": "rtcIceServer(url:hostname:port:type:username:password:relayType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DCIceServer",
+                "printedName": "datachannel_wrapper.DCIceServer",
+                "usr": "c:objc(cs)DCIceServer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int16",
+                "printedName": "Swift.Int16",
+                "hasDefaultArg": true,
+                "usr": "s:s5Int16V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DCIceServerType",
+                "printedName": "datachannel_wrapper.DCIceServerType",
+                "hasDefaultArg": true,
+                "usr": "c:@E@DCIceServerType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DCIceServerRelayType",
+                "printedName": "datachannel_wrapper.DCIceServerRelayType",
+                "hasDefaultArg": true,
+                "usr": "c:@E@DCIceServerRelayType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19datachannel_wrapper7DCLibDCC12rtcIceServer3url8hostname4port4type8username8password9relayTypeSo05DCIceG0CSSSg_SSs5Int16VSo0pgO0VS2SSo0pg5RelayO0VtFZ",
+            "mangledName": "$s19datachannel_wrapper7DCLibDCC12rtcIceServer3url8hostname4port4type8username8password9relayTypeSo05DCIceG0CSSSg_SSs5Int16VSo0pgO0VS2SSo0pg5RelayO0VtFZ",
+            "moduleName": "datachannel_wrapper",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "rtcConfiguration",
+            "printedName": "rtcConfiguration(iceServers:proxyServer:bindAddress:certificateType:iceTransportPolicy:enableIceTcp:enableIceUdpMux:disableAutoNegotiation:forceMediaTransport:portRangeBegin:portRangeEnd:mtu:maxMessageSize:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DCConfiguration",
+                "printedName": "datachannel_wrapper.DCConfiguration",
+                "usr": "c:objc(cs)DCConfiguration"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[datachannel_wrapper.DCIceServer]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCIceServer",
+                    "printedName": "datachannel_wrapper.DCIceServer",
+                    "usr": "c:objc(cs)DCIceServer"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "datachannel_wrapper.DCProxyServer?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCProxyServer",
+                    "printedName": "datachannel_wrapper.DCProxyServer",
+                    "usr": "c:objc(cs)DCProxyServer"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DCCertificateType",
+                "printedName": "datachannel_wrapper.DCCertificateType",
+                "hasDefaultArg": true,
+                "usr": "c:@E@DCCertificateType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DCTransportPolicy",
+                "printedName": "datachannel_wrapper.DCTransportPolicy",
+                "hasDefaultArg": true,
+                "usr": "c:@E@DCTransportPolicy"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "hasDefaultArg": true,
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "hasDefaultArg": true,
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19datachannel_wrapper7DCLibDCC16rtcConfiguration10iceServers11proxyServer11bindAddress15certificateType0G15TransportPolicy12enableIceTcp0qR6UdpMux22disableAutoNegotiation010forceMediaO014portRangeBegin12portRangeEnd3mtu14maxMessageSizeSo15DCConfigurationCSaySo05DCIceJ0CG_So07DCProxyJ0CSgSSSgSo013DCCertificateN0VSo011DCTransportP0VS4bs5Int32VA4_So8NSNumberCSgA7_tFZ",
+            "mangledName": "$s19datachannel_wrapper7DCLibDCC16rtcConfiguration10iceServers11proxyServer11bindAddress15certificateType0G15TransportPolicy12enableIceTcp0qR6UdpMux22disableAutoNegotiation010forceMediaO014portRangeBegin12portRangeEnd3mtu14maxMessageSizeSo15DCConfigurationCSaySo05DCIceJ0CG_So07DCProxyJ0CSgSSSgSo013DCCertificateN0VSo011DCTransportP0VS4bs5Int32VA4_So8NSNumberCSgA7_tFZ",
+            "moduleName": "datachannel_wrapper",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19datachannel_wrapper7DCLibDCC",
+        "mangledName": "$s19datachannel_wrapper7DCLibDCC",
+        "moduleName": "datachannel_wrapper",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DCPeerConnection",
+        "printedName": "DCPeerConnection",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "createDataChannel",
+            "printedName": "createDataChannel(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "datachannel_wrapper.DCDataChannel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCDataChannel",
+                    "printedName": "datachannel_wrapper.DCDataChannel",
+                    "usr": "c:objc(cs)DCDataChannel"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "datachannel_wrapper.DCDataChannelInit?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCDataChannelInit",
+                    "printedName": "datachannel_wrapper.DCDataChannelInit",
+                    "usr": "c:objc(cs)DCDataChannelInit"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So16DCPeerConnectionC19datachannel_wrapperE17createDataChannelySo06DCDataG0CSgSS_So0hG4InitCSgtF",
+            "mangledName": "$sSo16DCPeerConnectionC19datachannel_wrapperE17createDataChannelySo06DCDataG0CSgSS_So0hG4InitCSgtF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)DCPeerConnection",
+        "moduleName": "datachannel_wrapper",
+        "isOpen": true,
+        "objc_name": "DCPeerConnection",
+        "declAttributes": [
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 215,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 262,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 388,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 440,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "Array",
+      "offset": 933,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1313,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1377,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1448,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1516,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1580,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1641,
+      "length": 5,
+      "value": "65535"
+    }
+  ]
+}

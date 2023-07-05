@@ -35,7 +35,6 @@ import com.cdnbye.libdc.LibDC
 import com.cdnbye.libdc.LogLevel.DEBUG
 import com.cdnbye.libdc.PeerConnection
 import com.cdnbye.libdc.createDataChannel
-import com.cdnbye.libdc.rtcConfiguration
 
 @Composable
 fun MyApplicationTheme(
@@ -120,7 +119,7 @@ class MainActivity : ComponentActivity() {
       }
     }
 
-    val config = rtcConfiguration()
+    val config = LibDC.rtcConfiguration()
     val pc1 = PeerConnection.create(config)
     val pc2 = PeerConnection.create(config)
 
@@ -194,7 +193,7 @@ class MainActivity : ComponentActivity() {
       return
     }
 
-    dc.sendText("Hello world $i from $tag")
+    dc.sendText("Hello world $i from $tag ${LibDC.version()}")
     dc.sendBinary("binary msg $i from $tag".toByteArray())
 
     handler.postDelayed({

@@ -1,0 +1,11 @@
+framework module datachannel_wrapper {
+  umbrella header "datachannel_wrapper.h"
+
+  export *
+  module * { export * }
+}
+
+module datachannel_wrapper.Swift {
+  header "datachannel_wrapper-Swift.h"
+  requires objc
+}
