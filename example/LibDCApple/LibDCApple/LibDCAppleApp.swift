@@ -1,14 +1,14 @@
 //
-//  libDCiOSExampleApp.swift
-//  libDCiOSExample
+//  LibDCAppleApp.swift
+//  LibDCApple
 //
-//  Created by Piasy Xu on 2023/7/2.
+//  Created by Piasy Xu on 2023/7/12.
 //
 
 import SwiftUI
 
 @main
-struct libDCiOSExampleApp: App {
+struct LibDCAppleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
