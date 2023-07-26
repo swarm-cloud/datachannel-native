@@ -5,6 +5,7 @@
 #include "DataChannelImpl.h"
 
 #include "DcMessageCallback.hpp"
+#include "DcEvent.hpp"
 #include "DcEventCallback.hpp"
 #include "DcErrorCallback.hpp"
 
@@ -46,7 +47,7 @@ int32_t DataChannelImpl::bufferedAmount() {
 void DataChannelImpl::onOpen(const std::shared_ptr<DcEventCallback>& callback) {
     if (dc_) {
         dc_->onOpen([callback]() {
-            callback->onEvent();
+            callback->onEvent(DcEvent::OPEN);
         });
     }
 }
@@ -54,7 +55,7 @@ void DataChannelImpl::onOpen(const std::shared_ptr<DcEventCallback>& callback) {
 void DataChannelImpl::onClosed(const std::shared_ptr<DcEventCallback>& callback) {
     if (dc_) {
         dc_->onClosed([callback]() {
-            callback->onEvent();
+            callback->onEvent(DcEvent::CLOSED);
         });
     }
 }
@@ -85,7 +86,7 @@ void DataChannelImpl::onMessage(const std::shared_ptr<DcMessageCallback>& callba
 void DataChannelImpl::onBufferedAmountLow(const std::shared_ptr<DcEventCallback>& callback) {
     if (dc_) {
         dc_->onBufferedAmountLow([callback]() {
-            callback->onEvent();
+            callback->onEvent(DcEvent::BUFFEREDAMOUNTLOW);
         });
     }
 }

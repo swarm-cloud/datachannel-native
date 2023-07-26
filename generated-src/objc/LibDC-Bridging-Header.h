@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char LibDCBridgingHeaderVersionString[];
 #import "DCReliability.h"
 #import "DCDataChannelInit.h"
 #import "DCDcMessageCallback.h"
+#import "DCDcEvent.h"
 #import "DCDcEventCallback.h"
 #import "DCDcErrorCallback.h"
 #import "DCDataChannel.h"

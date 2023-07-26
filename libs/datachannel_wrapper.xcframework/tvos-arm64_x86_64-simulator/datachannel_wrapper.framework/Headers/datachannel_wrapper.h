@@ -7,6 +7,7 @@
 #import <datachannel_wrapper/DCDataChannelInit.h>
 #import <datachannel_wrapper/DCDcCallback.h>
 #import <datachannel_wrapper/DCDcErrorCallback.h>
+#import <datachannel_wrapper/DCDcEvent.h>
 #import <datachannel_wrapper/DCDcEventCallback.h>
 #import <datachannel_wrapper/DCDcMessageCallback.h>
 #import <datachannel_wrapper/DCGatheringState.h>

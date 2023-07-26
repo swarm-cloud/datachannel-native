@@ -33,14 +33,14 @@ private:
         JavaProxy(JniType j);
         ~JavaProxy();
 
-        void onEvent() override;
+        void onEvent(::libdc::DcEvent event) override;
 
     private:
         friend ::djinni::JniInterface<::libdc::DcEventCallback, ::djinni_generated::NativeDcEventCallback>;
     };
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/cdnbye/libdc/DcEventCallback") };
-    const jmethodID method_onEvent { ::djinni::jniGetMethodID(clazz.get(), "onEvent", "()V") };
+    const jmethodID method_onEvent { ::djinni::jniGetMethodID(clazz.get(), "onEvent", "(Lcom/cdnbye/libdc/DcEvent;)V") };
 };
 
 } // namespace djinni_generated

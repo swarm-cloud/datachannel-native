@@ -5,11 +5,13 @@
 
 namespace libdc {
 
+enum class DcEvent;
+
 class DcEventCallback {
 public:
     virtual ~DcEventCallback() = default;
 
-    virtual void onEvent() = 0;
+    virtual void onEvent(DcEvent event) = 0;
 };
 
 } // namespace libdc

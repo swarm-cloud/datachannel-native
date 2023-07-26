@@ -3,6 +3,7 @@
 
 #import "DCDcEventCallback+Private.h"
 #import "DCDcEventCallback.h"
+#import "DCDcEvent+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
 #include <stdexcept>
 
@@ -17,10 +18,10 @@ class DcEventCallback::ObjcProxy final
     friend class ::djinni_generated::DcEventCallback;
 public:
     using ObjcProxyBase::ObjcProxyBase;
-    void onEvent() override
+    void onEvent(::libdc::DcEvent c_event) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() onEvent];
+            [djinni_private_get_proxied_objc_object() onEvent:(::djinni::Enum<::libdc::DcEvent, DCDcEvent>::fromCpp(c_event))];
         }
     }
 };

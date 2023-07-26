@@ -55,6 +55,7 @@ else ()
             "${PRJ_ROOT}/generated-src/objc/DCDataChannelInit.h"
             "${PRJ_ROOT}/generated-src/objc/DCDcCallback.h"
             "${PRJ_ROOT}/generated-src/objc/DCDcErrorCallback.h"
+            "${PRJ_ROOT}/generated-src/objc/DCDcEvent.h"
             "${PRJ_ROOT}/generated-src/objc/DCDcEventCallback.h"
             "${PRJ_ROOT}/generated-src/objc/DCDcMessageCallback.h"
             "${PRJ_ROOT}/generated-src/objc/DCGatheringState.h"

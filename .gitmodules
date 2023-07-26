@@ -9,7 +9,7 @@
 	url = https://github.com/HackWebRTC/android-openssl-cmake.git
 [submodule "OpenSSL-for-iPhone"]
 	path = OpenSSL-for-iPhone
-	url = https://github.com/x2on/OpenSSL-for-iPhone.git
+	url = https://github.com/HackWebRTC/OpenSSL-for-iPhone.git
 [submodule "OpenSSL-for-macOS"]
 	path = OpenSSL-for-macOS
-	url = https://github.com/krzyzanowskim/OpenSSL.git
+	url = https://github.com/HackWebRTC/OpenSSL-for-macOS.git

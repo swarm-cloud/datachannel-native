@@ -32,9 +32,13 @@
 		<data>
 		hyvbpDFmce/bUtFR2eNGydXLYIE=
 		</data>
+		<key>Headers/DCDcEvent.h</key>
+		<data>
+		enbjKmPfRp50eKtJaPWx/rQ3lYE=
+		</data>
 		<key>Headers/DCDcEventCallback.h</key>
 		<data>
-		pzx+7fYYoYMBBKvG3jjN6fgV6JI=
+		NS1rBHWRKP1lLBWg4mrpoerRzH0=
 		</data>
 		<key>Headers/DCDcMessageCallback.h</key>
 		<data>
@@ -122,19 +126,19 @@
 		</data>
 		<key>Headers/datachannel_wrapper.h</key>
 		<data>
-		yrbcjkV0/jgS84IsrWXePahoqZY=
+		y52Znaad2J6HQsq+eKKH1BOZWmA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9d6UpnvTXB8QKCoSfQ7KIEpWu5M=
+		e7Ijxf97+HaZmCjZSUJ+nmVb0go=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		rmgPi7Y89SIhc1+0bVyF+9C16ZA=
+		Va1W267q0tGjQYO/hKNxbwgfwNI=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		n7+GbOfB2IwOex5UKfKAfwqRjUg=
+		YkEIF7Dk1on/6AmYR/SuVFyWws0=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
@@ -142,19 +146,19 @@
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		h5c243J01bm5YBMzoRTwYlR6Cpg=
+		m8pPrAuHAqBeJZAi0Tc2Qh/Y/lg=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		K5Isxkl5wzZr/vwGnTMEURdaoDU=
+		miAYMhBuoOBGaxUbbeZXsgDhx0Q=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		h5c243J01bm5YBMzoRTwYlR6Cpg=
+		m8pPrAuHAqBeJZAi0Tc2Qh/Y/lg=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		NrT5+uBgxtUgOBTZVXrukYjKz0I=
+		ppNmT0RuhTcevQW08K1ymZ1bdYg=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
@@ -162,19 +166,19 @@
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		ZCHhYDiL14ErM+nFizpJpiq9Ecc=
+		rbZAq4IkLsTe6xIg6vkauaFWv3g=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		06UIA+Mced9pLDcUMKFKKS8Qd+c=
+		Dsa1C4a+lXYGwjTKC49W0b1q5Kk=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		ZCHhYDiL14ErM+nFizpJpiq9Ecc=
+		rbZAq4IkLsTe6xIg6vkauaFWv3g=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		Oa5kMzJum8OGkTQkcJMVYZFEDO4=
+		5R/0kBOlZ/35B1yOK15sLTQUL2o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -232,11 +236,18 @@
 			BgeeLggzK0P/6QrX04ECWbwnOzIT4pID9/nfIjg6qbY=
 			</data>
 		</dict>
+		<key>Headers/DCDcEvent.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QjJmHB+AgZqVcPoXYeNLUaLPUT0Zx1eO2LxV0H57GBY=
+			</data>
+		</dict>
 		<key>Headers/DCDcEventCallback.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jBFBG+d8HsnmdTQ+XrcRzTrH7y4wJ4JJct63zd8QBUY=
+			OEjQnoTvFak4lWEyTFRfxLTAc+OtX8jjpIsXFmKnrb0=
 			</data>
 		</dict>
 		<key>Headers/DCDcMessageCallback.h</key>
@@ -390,21 +401,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lhSaAUbyaUNSpQzH/B8jIHsl+o5NH14xpyoCfVH/Po0=
+			HZZ++D/upGgW8kzDJsINjaEfEKJvPKzzCbN4b92kKS0=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5sEBHZtz/+l725krs3i5Row1HneDr2qt1P9ixdw59GI=
+			f8bKf/rZhbIo194p7E6M6stJcAVmu7TZqVB2M0HftV4=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L7LBfLUFU5pYMHwLCHHm3DX0Uo/sFB1zHshFoCDTsgw=
+			Q7Rw7WO/Vz+ppHC54/GOGqytoeTRtIz5dg1n+YnfwDc=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
@@ -418,28 +429,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			goKzbnVUIAtlf8jQe3f0vt1fjFiF0y6B+3e2IU0AFCo=
+			aHngjT31HvlF3uDCped1e8Xbxcu2UB/mIyyF49U0Yts=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			teFiB6yxSzJCfFi8cyNEKyvqzADmOiq5XcJgvJwcgTQ=
+			Jkjneee8Z2WK4bN9PzMRlhp67y6c1NvnlFK46Yw4Hgo=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			goKzbnVUIAtlf8jQe3f0vt1fjFiF0y6B+3e2IU0AFCo=
+			aHngjT31HvlF3uDCped1e8Xbxcu2UB/mIyyF49U0Yts=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CrCOB27AwBY7qfgtiXHQIKwVdo4UnckjNYF7Z9/x/vw=
+			O4HyHLhLXIo7xw6wefvKSGXfqAaeY4wZDGN3GfHDru8=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
@@ -453,28 +464,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s5MFZuRrdSWT1F2VM+hFCtOqwRdDPH568n6DBpXFr7w=
+			4gTwzRghhUS+3vDpmm0ncZGJNdHxcGhGL8dXRyx8lTE=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L/pZnaT3hmasAPuMLk6JLnrpYoxGrSdMqXSrHSid8Kw=
+			XHIImxMkXU/VHi3wIZSMT6BZTmwTs5BCqMIMc/hf5Vs=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s5MFZuRrdSWT1F2VM+hFCtOqwRdDPH568n6DBpXFr7w=
+			4gTwzRghhUS+3vDpmm0ncZGJNdHxcGhGL8dXRyx8lTE=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z4KmUWR5PfNDx0wg1R9xRgZylEmqCDGTqv7RqPQhnUg=
+			2nDwZagHDNMBPsjwyFoojJXJe0W4uW01LLZyOvA1St8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

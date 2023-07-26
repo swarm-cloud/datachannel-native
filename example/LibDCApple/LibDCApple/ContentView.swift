@@ -23,9 +23,11 @@ class DcOpenCallback : NSObject, DCDcEventCallback {
         self.label = label
     }
 
-    func onEvent() {
-        NSLog("%@ dc onOpen", label)
-        dc.sendText(String(format: "Hello world from %@ %@", label, DCLibDC.version()))
+    func onEvent(_ event: DCDcEvent) {
+        if (event == DCDcEvent.open) {
+            NSLog("%@ dc onOpen", label)
+            dc.sendText(String(format: "Hello world from %@ %@", label, DCLibDC.version()))
+        }
     }
 }
 

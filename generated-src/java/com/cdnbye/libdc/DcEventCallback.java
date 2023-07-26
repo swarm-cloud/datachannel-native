@@ -7,5 +7,5 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public interface DcEventCallback {
-    void onEvent();
+    void onEvent(@NonNull DcEvent event);
 }

@@ -15,7 +15,7 @@ cmake -S src -B build/iOS -G Xcode \
     -DOPENSSL_APPLE_OS_PREFIX=iOS \
     -DNO_WEBSOCKET=ON -DNO_MEDIA=ON -DNO_EXAMPLES=ON -DNO_TESTS=ON \
     -DCMAKE_OSX_ARCHITECTURES=arm64 \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0
 
 xcodebuild -quiet -project build/iOS/datachannel_wrapper.xcodeproj \
     -configuration Release \
@@ -27,7 +27,7 @@ cmake -S src -B build/iOS-Sim -G Xcode \
     -DOPENSSL_APPLE_OS_PREFIX=iOS-Sim \
     -DNO_WEBSOCKET=ON -DNO_MEDIA=ON -DNO_EXAMPLES=ON -DNO_TESTS=ON \
     -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0
 
 xcodebuild -quiet -project build/iOS-Sim/datachannel_wrapper.xcodeproj \
     -configuration Release \
@@ -39,7 +39,7 @@ cmake -S src -B build/tvOS -G Xcode \
     -DOPENSSL_APPLE_OS_PREFIX=tvOS \
     -DNO_WEBSOCKET=ON -DNO_MEDIA=ON -DNO_EXAMPLES=ON -DNO_TESTS=ON \
     -DCMAKE_OSX_ARCHITECTURES=arm64 \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0
 
 xcodebuild -quiet -project build/tvOS/datachannel_wrapper.xcodeproj \
     -configuration Release \
@@ -51,7 +51,7 @@ cmake -S src -B build/tvOS-Sim -G Xcode \
     -DOPENSSL_APPLE_OS_PREFIX=tvOS-Sim \
     -DNO_WEBSOCKET=ON -DNO_MEDIA=ON -DNO_EXAMPLES=ON -DNO_TESTS=ON \
     -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0
 
 xcodebuild -quiet -project build/tvOS-Sim/datachannel_wrapper.xcodeproj \
     -configuration Release \

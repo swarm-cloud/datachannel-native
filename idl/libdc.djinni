@@ -105,8 +105,14 @@ DcMessageCallback = interface +j +o {
     onBinary(msg: binary);
 }
 
+DcEvent = enum {
+    Open;
+    Closed;
+    BufferedAmountLow;
+}
+
 DcEventCallback = interface +j +o {
-    onEvent();
+    onEvent(event: DcEvent);
 }
 
 DcErrorCallback = interface +j +o {

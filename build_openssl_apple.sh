@@ -7,5 +7,5 @@ popd
 
 pushd OpenSSL-for-macOS
 rm -rf macosx
-OPENSSL_VERSION="1.1.1t" ./scripts/build.sh
+OPENSSL_VERSION="1.1.1u" ./scripts/build.sh
 popd
