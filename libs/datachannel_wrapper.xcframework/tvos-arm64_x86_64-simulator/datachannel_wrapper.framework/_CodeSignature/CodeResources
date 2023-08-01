@@ -134,19 +134,19 @@
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		pHRCdIefBPvBnsNOHFYxBcDLJoI=
+		m2F7UgENo9Cn6h2r/UrEpPLgIPU=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		l6RV4NrL9gfqh2bplWEWfL3H8kY=
+		8ryAoF6ZWgxWfa67YFbOp4ZITcU=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		ZEWcYLCALfHhFGykTfSSCbAjhjo=
+		CSWgiuHnfu3j7RjBUcPOw0Lnp7o=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		d4ZaxM0BSr4NVBncCx62CQae01A=
+		iuaX/5HZBiejR3o5uwyNLhPf6f0=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -154,19 +154,19 @@
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		d4ZaxM0BSr4NVBncCx62CQae01A=
+		iuaX/5HZBiejR3o5uwyNLhPf6f0=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		scFvAU09/n+m5ESudSr1jDC6a30=
+		/HhL99c+oQ1H0H4KF5xBHI65o9A=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		ZEWcYLCALfHhFGykTfSSCbAjhjo=
+		CSWgiuHnfu3j7RjBUcPOw0Lnp7o=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		AhSgWE1XYw4In60Lk52008dVTA4=
+		h/TQ6xmncx/ByxGh6cw8f8ym9mY=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -174,11 +174,11 @@
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		AhSgWE1XYw4In60Lk52008dVTA4=
+		h/TQ6xmncx/ByxGh6cw8f8ym9mY=
 		</data>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		NJXwRAPd0eWUahRQ1zCmKCXcnRE=
+		Cfz0izi9dF4Y4YQ9Fe8zgzmb9yE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -408,28 +408,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xfZM0nMt98vXpukYYO1CBq/xzX7Xfsw44jVUiRtwUBQ=
+			T/4FBCOVgQvn0s/rPlpxA3i1OSNRlAzSeXlLTfMhCBg=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9ctd+iOuKeOSNZC8l12pv/fxy+tPUplXoRn15vbu0n8=
+			0A7mrGapNqcSXosd3POVCgITHbH70fERj4TCFJJl8R8=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vl7MRrQxx3Aw++116oj9wTSMP0sTKnuskfFlDHvjzCQ=
+			iCt571CwS5exideBZRdX3C0Se6+/vuxDIkw1MsN01yg=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tAVN4XZ/YyuLoqnz5k3tAVtxDjbIYKxVM/wC+XwhznQ=
+			cSue6b4IZo4hykJic7bFYgOsyuMSFEaoQRi4KGJCY24=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
@@ -443,28 +443,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tAVN4XZ/YyuLoqnz5k3tAVtxDjbIYKxVM/wC+XwhznQ=
+			cSue6b4IZo4hykJic7bFYgOsyuMSFEaoQRi4KGJCY24=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UJSGeJlGVQnF9dxVVod7zReWO6VtqFTeoP1uamrUlJY=
+			P/P3jTbtop6xaeAvYhqbaFPEf/L/m0WcbQJmB15LeNQ=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vl7MRrQxx3Aw++116oj9wTSMP0sTKnuskfFlDHvjzCQ=
+			iCt571CwS5exideBZRdX3C0Se6+/vuxDIkw1MsN01yg=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4Yzee5aYF/n69EMSmOv73gKnex9ary1BkbnUTy4bDfs=
+			g/rc1v74mA5iHVU806ggpHQd1QivRQ71dP8cHe2m5gA=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
@@ -478,14 +478,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4Yzee5aYF/n69EMSmOv73gKnex9ary1BkbnUTy4bDfs=
+			g/rc1v74mA5iHVU806ggpHQd1QivRQ71dP8cHe2m5gA=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZmgfdmFa5rMVlnIsz+hPJxehSMzs57L0CiG9skpGScY=
+			2fYua+FSE3lgJCke9RNLm8U/jJfvmWhEHCFxSG8CgyQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

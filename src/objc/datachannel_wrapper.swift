@@ -96,7 +96,47 @@ private class DCClosureLogCallback : NSObject, DCLogCallback {
     }
 }
 
+private class DCClosureIceStateCallback : NSObject, DCIceStateCallback {
+    let callback: (_ state: DCIceState) -> ()
+
+    init(_ callback: @escaping (_ state: DCIceState) -> ()) {
+        self.callback = callback
+    }
+
+    func onStateChanged(_ state: DCIceState) {
+        callback(state)
+    }
+}
+
+private class DCClosureGatheringStateCallback : NSObject, DCGatheringStateCallback {
+    let callback: (_ state: DCGatheringState) -> ()
+
+    init(_ callback: @escaping (_ state: DCGatheringState) -> ()) {
+        self.callback = callback
+    }
+
+    func onStateChanged(_ state: DCGatheringState) {
+        callback(state)
+    }
+}
+
+private class DCClosureSignalingStateCallback : NSObject, DCSignalingStateCallback {
+    let callback: (_ state: DCSignalingState) -> ()
+
+    init(_ callback: @escaping (_ state: DCSignalingState) -> ()) {
+        self.callback = callback
+    }
+
+    func onStateChanged(_ state: DCSignalingState) {
+        callback(state)
+    }
+}
+
 public extension DCPeerConnection {
+    class func initLogger(_ level: DCLogLevel, callback: @escaping (_ level: DCLogLevel, _ message: String) -> ()) {
+        DCPeerConnection.initLogger(level, callback: DCClosureLogCallback(callback))
+    }
+
     func onLocalDescription(_ callback: @escaping (_ sdp: String) -> ()) {
         onLocalDescription(DCClosureSdpCallback(callback))
     }
@@ -109,8 +149,16 @@ public extension DCPeerConnection {
         onDataChannel(DCClosureDcCallback(callback))
     }
 
-    class func initLogger(_ level: DCLogLevel, callback: @escaping (_ level: DCLogLevel, _ message: String) -> ()) {
-        DCPeerConnection.initLogger(level, callback: DCClosureLogCallback(callback))
+    func onStateChange(_ callback: @escaping (_ state: DCIceState) -> ()) {
+        onStateChange(DCClosureIceStateCallback(callback))
+    }
+
+    func onGatheringStateChange(_ callback: @escaping (_ state: DCGatheringState) -> ()) {
+        onGatheringStateChange(DCClosureGatheringStateCallback(callback))
+    }
+
+    func onSignalingStateChange(_ callback: @escaping (_ state: DCSignalingState) -> ()) {
+        onSignalingStateChange(DCClosureSignalingStateCallback(callback))
     }
 
     func createDataChannel(_ label : String, _ conf: DCDataChannelInit? = nil) -> DCDataChannel? {
