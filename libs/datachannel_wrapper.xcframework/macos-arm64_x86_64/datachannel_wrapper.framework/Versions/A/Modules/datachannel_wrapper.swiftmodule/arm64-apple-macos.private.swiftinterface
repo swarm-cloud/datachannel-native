@@ -13,5 +13,16 @@ import _StringProcessing
   @objc deinit
 }
 extension datachannel_wrapper.DCPeerConnection {
+  public func onLocalDescription(_ callback: @escaping (_ sdp: Swift.String) -> ())
+  public func onLocalCandidate(_ callback: @escaping (_ candidate: Swift.String, _ mid: Swift.String) -> ())
+  public func onDataChannel(_ callback: @escaping (_ dc: datachannel_wrapper.DCDataChannel?) -> ())
+  public class func initLogger(_ level: datachannel_wrapper.DCLogLevel, callback: @escaping (_ level: datachannel_wrapper.DCLogLevel, _ message: Swift.String) -> ())
   public func createDataChannel(_ label: Swift.String, _ conf: datachannel_wrapper.DCDataChannelInit? = nil) -> datachannel_wrapper.DCDataChannel?
+}
+extension datachannel_wrapper.DCDataChannel {
+  public func onOpen(_ callback: @escaping (_ event: datachannel_wrapper.DCDcEvent) -> ())
+  public func onClosed(_ callback: @escaping (_ event: datachannel_wrapper.DCDcEvent) -> ())
+  public func onError(_ callback: @escaping (_ error: Swift.String) -> ())
+  public func onMessage(text: @escaping (_ msg: Swift.String) -> (), binary: @escaping (_ msg: Foundation.Data) -> ())
+  public func onBufferedAmountLow(_ callback: @escaping (_ event: datachannel_wrapper.DCDcEvent) -> ())
 }

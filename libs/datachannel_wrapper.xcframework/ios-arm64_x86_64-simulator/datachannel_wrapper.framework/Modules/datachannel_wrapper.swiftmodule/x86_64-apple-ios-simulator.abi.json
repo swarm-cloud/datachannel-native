@@ -280,6 +280,191 @@
         "children": [
           {
             "kind": "Function",
+            "name": "onLocalDescription",
+            "printedName": "onLocalDescription(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So16DCPeerConnectionC19datachannel_wrapperE18onLocalDescriptionyyySScF",
+            "mangledName": "$sSo16DCPeerConnectionC19datachannel_wrapperE18onLocalDescriptionyyySScF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onLocalCandidate",
+            "printedName": "onLocalCandidate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String, Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.String, Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So16DCPeerConnectionC19datachannel_wrapperE16onLocalCandidateyyySS_SStcF",
+            "mangledName": "$sSo16DCPeerConnectionC19datachannel_wrapperE16onLocalCandidateyyySS_SStcF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onDataChannel",
+            "printedName": "onDataChannel(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(datachannel_wrapper.DCDataChannel?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "datachannel_wrapper.DCDataChannel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DCDataChannel",
+                        "printedName": "datachannel_wrapper.DCDataChannel",
+                        "usr": "c:objc(cs)DCDataChannel"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So16DCPeerConnectionC19datachannel_wrapperE13onDataChannelyyySo06DCDataG0CSgcF",
+            "mangledName": "$sSo16DCPeerConnectionC19datachannel_wrapperE13onDataChannelyyySo06DCDataG0CSgcF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "initLogger",
+            "printedName": "initLogger(_:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DCLogLevel",
+                "printedName": "datachannel_wrapper.DCLogLevel",
+                "usr": "c:@E@DCLogLevel"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(datachannel_wrapper.DCLogLevel, Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(datachannel_wrapper.DCLogLevel, Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DCLogLevel",
+                        "printedName": "datachannel_wrapper.DCLogLevel",
+                        "usr": "c:@E@DCLogLevel"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So16DCPeerConnectionC19datachannel_wrapperE10initLogger_8callbackySo10DCLogLevelV_yAG_SStctFZ",
+            "mangledName": "$sSo16DCPeerConnectionC19datachannel_wrapperE10initLogger_8callbackySo10DCLogLevelV_yAG_SStctFZ",
+            "moduleName": "datachannel_wrapper",
+            "static": true,
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "createDataChannel",
             "printedName": "createDataChannel(_:_:)",
             "children": [
@@ -332,6 +517,277 @@
         "moduleName": "datachannel_wrapper",
         "isOpen": true,
         "objc_name": "DCPeerConnection",
+        "declAttributes": [
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DCDataChannel",
+        "printedName": "DCDataChannel",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onOpen",
+            "printedName": "onOpen(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(datachannel_wrapper.DCDcEvent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCDcEvent",
+                    "printedName": "datachannel_wrapper.DCDcEvent",
+                    "usr": "c:@E@DCDcEvent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So13DCDataChannelC19datachannel_wrapperE6onOpenyyySo9DCDcEventVcF",
+            "mangledName": "$sSo13DCDataChannelC19datachannel_wrapperE6onOpenyyySo9DCDcEventVcF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onClosed",
+            "printedName": "onClosed(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(datachannel_wrapper.DCDcEvent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCDcEvent",
+                    "printedName": "datachannel_wrapper.DCDcEvent",
+                    "usr": "c:@E@DCDcEvent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So13DCDataChannelC19datachannel_wrapperE8onClosedyyySo9DCDcEventVcF",
+            "mangledName": "$sSo13DCDataChannelC19datachannel_wrapperE8onClosedyyySo9DCDcEventVcF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onError",
+            "printedName": "onError(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So13DCDataChannelC19datachannel_wrapperE7onErroryyySScF",
+            "mangledName": "$sSo13DCDataChannelC19datachannel_wrapperE7onErroryyySScF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onMessage",
+            "printedName": "onMessage(text:binary:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.Data) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So13DCDataChannelC19datachannel_wrapperE9onMessage4text6binaryyySSc_y10Foundation4DataVctF",
+            "mangledName": "$sSo13DCDataChannelC19datachannel_wrapperE9onMessage4text6binaryyySSc_y10Foundation4DataVctF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onBufferedAmountLow",
+            "printedName": "onBufferedAmountLow(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(datachannel_wrapper.DCDcEvent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCDcEvent",
+                    "printedName": "datachannel_wrapper.DCDcEvent",
+                    "usr": "c:@E@DCDcEvent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So13DCDataChannelC19datachannel_wrapperE19onBufferedAmountLowyyySo9DCDcEventVcF",
+            "mangledName": "$sSo13DCDataChannelC19datachannel_wrapperE19onBufferedAmountLowyyySo9DCDcEventVcF",
+            "moduleName": "datachannel_wrapper",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)DCDataChannel",
+        "moduleName": "datachannel_wrapper",
+        "isOpen": true,
+        "objc_name": "DCDataChannel",
         "declAttributes": [
           "ObjC",
           "Dynamic"
@@ -474,6 +930,55 @@
       "offset": 1641,
       "length": 5,
       "value": "65535"
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 2620,
+      "length": 20,
+      "value": "\"datachannel_wrapper.DCClosureSdpCallback\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 2883,
+      "length": 26,
+      "value": "\"datachannel_wrapper.DCClosureCandidateCallback\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 3236,
+      "length": 19,
+      "value": "\"datachannel_wrapper.DCClosureDcCallback\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 3525,
+      "length": 20,
+      "value": "\"datachannel_wrapper.DCClosureLogCallback\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 5104,
+      "length": 26,
+      "value": "\"datachannel_wrapper.DCClosureDcMessageCallback\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 5606,
+      "length": 24,
+      "value": "\"datachannel_wrapper.DCClosureDcEventCallback\""
+    },
+    {
+      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 5896,
+      "length": 24,
+      "value": "\"datachannel_wrapper.DCClosureDcErrorCallback\""
     }
   ]
 }
