@@ -50,6 +50,16 @@ struct ContentView: View {
             }
 
             let dc1 = pc1?.createDataChannel("test")
+            
+
+            do {
+                try ObjCExceptions.catch {
+                    dc1?.sendText(String(format: "Hello world from %@ %@", "123", DCLibDC.version()))
+                }
+            } catch (let error) {
+                print(error.localizedDescription)
+            }
+            
             dc1?.onMessage(text: { msg in
                 NSLog("pc1 onText %@", msg)
             }, binary: { msg in

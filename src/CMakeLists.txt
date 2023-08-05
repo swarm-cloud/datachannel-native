@@ -77,6 +77,7 @@ else ()
             "${PRJ_ROOT}/generated-src/objc/DCSignalingStateCallback.h"
             "${PRJ_ROOT}/generated-src/objc/DCTransportPolicy.h"
             "${PRJ_ROOT}/generated-src/objc/DCLibVersion.h"
+            "${PRJ_ROOT}/src/objc/ObjCExceptions.h"
             "${PRJ_ROOT}/src/objc/datachannel_wrapper.h"
             )
 
@@ -84,6 +85,7 @@ else ()
             ${djinni_src}
             ${generated_src}
             ${public_headers}
+            "${PRJ_ROOT}/src/objc/ObjCExceptions.m"
             "${PRJ_ROOT}/src/objc/datachannel_wrapper.swift")
 endif ()
 

@@ -29,3 +29,4 @@
 #import <datachannel_wrapper/DCSignalingStateCallback.h>
 #import <datachannel_wrapper/DCTransportPolicy.h>
 #import <datachannel_wrapper/DCLibVersion.h>
+#import <datachannel_wrapper/ObjCExceptions.h>

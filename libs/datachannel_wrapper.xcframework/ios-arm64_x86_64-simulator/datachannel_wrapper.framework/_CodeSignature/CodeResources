@@ -120,13 +120,17 @@
 		<data>
 		4mRq/vadym/Fk63Oe15o6FxcZLc=
 		</data>
+		<key>Headers/ObjCExceptions.h</key>
+		<data>
+		nSGow0RyB4fcn3WbpcjW8AxPcx4=
+		</data>
 		<key>Headers/datachannel_wrapper-Swift.h</key>
 		<data>
 		MrqkMR5VqN8GnGouMw0K7MCAXvE=
 		</data>
 		<key>Headers/datachannel_wrapper.h</key>
 		<data>
-		y52Znaad2J6HQsq+eKKH1BOZWmA=
+		5WnfZ5esl501fgAixxLbKpfH1Z8=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -390,6 +394,13 @@
 			t5lMEbMwhoS7kZcLuuyebdacaecwuyssbDjlLHf7V5c=
 			</data>
 		</dict>
+		<key>Headers/ObjCExceptions.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WqMc6B6lOgzze5znz3dSz4C4l9XvcJilpm2OWi0qzSw=
+			</data>
+		</dict>
 		<key>Headers/datachannel_wrapper-Swift.h</key>
 		<dict>
 			<key>hash2</key>
@@ -401,7 +412,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HZZ++D/upGgW8kzDJsINjaEfEKJvPKzzCbN4b92kKS0=
+			QIgnI9zdyEDORV46T/qJ+plBEvBPJVpaqBw3ukLrh7I=
 			</data>
 		</dict>
 		<key>Modules/datachannel_wrapper.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
