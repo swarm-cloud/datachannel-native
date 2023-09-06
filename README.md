@@ -1,8 +1,6 @@
 # DataChannel Native
 
-Native platform (Android/iOS/macOS) wrapper for [paullouisageneau/libdatachannel](https://github.com/paullouisageneau/libdatachannel): C/C++ WebRTC network library.
-
-Currently only Android platform is supported, only DataChannel is supported.
+Native platform (Android/iOS/tvOS/macOS) wrapper for [paullouisageneau/libdatachannel](https://github.com/paullouisageneau/libdatachannel): C/C++ WebRTC network library.
 
 ## Android
 
