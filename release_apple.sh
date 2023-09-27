@@ -85,20 +85,20 @@ mkdir -p ${INSTALL_DIR}/symbols/iOS \
     ${INSTALL_DIR}/symbols/tvOS-Sim \
     ${INSTALL_DIR}/symbols/macOS
 
-cp -r libs/datachannel_wrapper.xcframework ${INSTALL_DIR}/
+cp -R libs/datachannel_wrapper.xcframework ${INSTALL_DIR}/
 
-cp -r build/iOS/Release-iphoneos/datachannel_wrapper.framework.dSYM \
+cp -R build/iOS/Release-iphoneos/datachannel_wrapper.framework.dSYM \
     ${INSTALL_DIR}/symbols/iOS/
-cp -r build/iOS-Sim/Release-iphonesimulator/datachannel_wrapper.framework.dSYM \
+cp -R build/iOS-Sim/Release-iphonesimulator/datachannel_wrapper.framework.dSYM \
     ${INSTALL_DIR}/symbols/iOS-Sim/
-cp -r build/tvOS/Release-appletvos/datachannel_wrapper.framework.dSYM \
+cp -R build/tvOS/Release-appletvos/datachannel_wrapper.framework.dSYM \
     ${INSTALL_DIR}/symbols/tvOS/
-cp -r build/tvOS-Sim/Release-appletvsimulator/datachannel_wrapper.framework.dSYM \
+cp -R build/tvOS-Sim/Release-appletvsimulator/datachannel_wrapper.framework.dSYM \
     ${INSTALL_DIR}/symbols/tvOS-Sim/
-cp -r build/macOS/Release/datachannel_wrapper.framework.dSYM \
+cp -R build/macOS/Release/datachannel_wrapper.framework.dSYM \
     ${INSTALL_DIR}/symbols/macOS/
 
 pushd ~/Downloads/
-zip -r ${INSTALL_DIR}.zip libdc-iOS-${VERSION}
+zip -ry ${INSTALL_DIR}.zip libdc-iOS-${VERSION}
 popd
 rm -rf ${INSTALL_DIR}
