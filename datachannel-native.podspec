@@ -13,6 +13,10 @@ Pod::Spec.new do |s|
 
   s.swift_versions = '5'
 
-  s.source        = { :http => 'https://web3lab.b-cdn.net/apple/libDC/1.0.190/datachannel_wrapper.xcframework.zip' }
+  s.source        = { :http => 'https://web3lab.b-cdn.net/apple/libDC/1.0.190/datachannel_wrapper.xcframework.zip', :type => 'zip' }
+
+  s.preserve_paths = 'datachannel_wrapper.xcframework'
+  s.vendored_frameworks = 'datachannel_wrapper.xcframework'
+
 
 end
