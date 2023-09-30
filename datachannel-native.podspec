@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = 'datachannel-apple'
+  s.name = 'datachannel-native'
   s.version = '1.0.190'
   s.license = 'MIT'
   s.summary = 'P2P Streaming Engine for iOS, tvOS and macOS.'
