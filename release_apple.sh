@@ -5,7 +5,7 @@ set -e
 VERSION=$(grep -E ".*LibVersion::version.*\"" src/cpp/PeerConnectionImpl.cpp)
 VERSION=$(echo ${VERSION} | cut -d " " -f 5 | cut -d "\"" -f 2)
 
-export DEVELOPER_DIR=/Applications/Xcode_14.1.app/Contents/Developer/
+#export DEVELOPER_DIR=/Applications/Xcode_14.1.app/Contents/Developer/
 
 rm -rf build/iOS build/iOS-Sim build/tvOS build/tvOS-Sim build/macOS \
     libs/datachannel_wrapper.xcframework
@@ -77,7 +77,7 @@ xcodebuild -create-xcframework -framework build/iOS/Release-iphoneos/datachannel
   -framework build/macOS/Release/datachannel_wrapper.framework \
   -output libs/datachannel_wrapper.xcframework
 
-INSTALL_DIR=~/Downloads/libdc-iOS-${VERSION}
+INSTALL_DIR=~/Downloads/libdc-Apple-${VERSION}
 
 mkdir -p ${INSTALL_DIR}/symbols/iOS \
     ${INSTALL_DIR}/symbols/iOS-Sim \
@@ -99,6 +99,6 @@ cp -R build/macOS/Release/datachannel_wrapper.framework.dSYM \
     ${INSTALL_DIR}/symbols/macOS/
 
 pushd ~/Downloads/
-zip -ry ${INSTALL_DIR}.zip libdc-iOS-${VERSION}
+zip -ry ${INSTALL_DIR}.zip libdc-Apple-${VERSION}
 popd
 rm -rf ${INSTALL_DIR}

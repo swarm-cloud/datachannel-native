@@ -332,6 +332,6 @@ std::shared_ptr<DataChannel> PeerConnectionImpl::createDataChannel(const std::st
     return std::make_shared<DataChannelImpl>(pc_.createDataChannel(label, toRtcDcInit(init)));
 }
 
-std::string LibVersion::version() { return "1.0.211"; }
+std::string LibVersion::version() { return "1.0.2113"; }
 
 } // libdc

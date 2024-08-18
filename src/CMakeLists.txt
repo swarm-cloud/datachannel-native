@@ -100,6 +100,9 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         datachannel-static
         )
 
+file(READ "cpp/PeerConnectionImpl.cpp" VER_FILE_CONTENT)
+string(REGEX MATCH "\"[0-9]+.[0-9]+.[0-9]+.[0-9]+.*\"" VERSION_NUMBER ${VER_FILE_CONTENT})
+
 if (ANDROID)
     target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
             "${PRJ_ROOT}/djinni/support-lib/jni"
@@ -113,6 +116,8 @@ else ()
     set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES
             FRAMEWORK TRUE
             MACOSX_FRAMEWORK_IDENTIFIER com.cdnbye.libdc
+            MACOSX_FRAMEWORK_BUNDLE_VERSION "${VERSION_NUMBER}"
+            MACOSX_FRAMEWORK_SHORT_VERSION_STRING "${VERSION_NUMBER}"
             PUBLIC_HEADER "${public_headers}"
             XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "Apple Development"
             XCODE_ATTRIBUTE_ENABLE_BITCODE "NO"
