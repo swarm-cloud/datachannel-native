@@ -2,7 +2,7 @@
 set -eu
 shopt -s nullglob
 
-export DEVELOPER_DIR=/Applications/Xcode_14.1.app/Contents/Developer/
+export DEVELOPER_DIR=$(xcode-select -p)
 
 # Locate the script file.  Cross symlinks if necessary.
 loc="$0"
