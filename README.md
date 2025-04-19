@@ -103,6 +103,15 @@ The API is almost the same as Android, the difference is just the difference bet
 
 ## Development
 
+Install Android NDK 23.1.7779620 and export NDK env pointing to it.
+
+Install dependencies:
+
+```bash
+curl -fLO https://releases.bazel.build/5.4.1/release/bazel-5.4.1-darwin-arm64 && chmod +x bazel-5.4.1-darwin-arm64
+mv bazel-5.4.1-darwin-arm64 /usr/local/bin/bazel
+```
+
 Before start building, run commands below:
 
 ```bash

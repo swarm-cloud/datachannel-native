@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "datachannel_wrapper",
+    "printedName": "datachannel_wrapper",
     "children": [
       {
         "kind": "TypeDecl",
@@ -271,7 +271,23 @@
         "declAttributes": [
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -638,6 +654,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -909,6 +939,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -963,151 +1007,109 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "StringLiteral",
       "offset": 215,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 262,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "StringLiteral",
       "offset": 388,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "StringLiteral",
       "offset": 440,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "Array",
       "offset": 933,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "BooleanLiteral",
       "offset": 1313,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "BooleanLiteral",
       "offset": 1377,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "BooleanLiteral",
       "offset": 1448,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "BooleanLiteral",
       "offset": 1516,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 1580,
       "length": 4,
       "value": "1024"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "IntegerLiteral",
       "offset": 1641,
       "length": 5,
       "value": "65535"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 2620,
-      "length": 20,
-      "value": "\"datachannel_wrapper.DCClosureSdpCallback\""
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6351,
+      "length": 5,
+      "value": "false"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 2883,
-      "length": 26,
-      "value": "\"datachannel_wrapper.DCClosureCandidateCallback\""
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6368,
+      "length": 1,
+      "value": "0"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 3236,
-      "length": 19,
-      "value": "\"datachannel_wrapper.DCClosureDcCallback\""
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6418,
+      "length": 5,
+      "value": "false"
     },
     {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
+      "filePath": "\/Users\/linker\/src\/Piasy\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
       "kind": "StringLiteral",
-      "offset": 3525,
-      "length": 20,
-      "value": "\"datachannel_wrapper.DCClosureLogCallback\""
-    },
-    {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 3872,
-      "length": 25,
-      "value": "\"datachannel_wrapper.DCClosureIceStateCallback\""
-    },
-    {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 4174,
-      "length": 31,
-      "value": "\"datachannel_wrapper.DCClosureGatheringStateCallback\""
-    },
-    {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 4506,
-      "length": 31,
-      "value": "\"datachannel_wrapper.DCClosureSignalingStateCallback\""
-    },
-    {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 6556,
-      "length": 26,
-      "value": "\"datachannel_wrapper.DCClosureDcMessageCallback\""
-    },
-    {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 7058,
-      "length": 24,
-      "value": "\"datachannel_wrapper.DCClosureDcEventCallback\""
-    },
-    {
-      "filePath": "\/Users\/piasy\/src\/media\/datachannel-native\/src\/objc\/datachannel_wrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 7348,
-      "length": 24,
-      "value": "\"datachannel_wrapper.DCClosureDcErrorCallback\""
+      "offset": 6444,
+      "length": 2,
+      "value": "\"\""
     }
   ]
 }
