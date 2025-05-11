@@ -101,7 +101,17 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         )
 
 file(READ "cpp/PeerConnectionImpl.cpp" VER_FILE_CONTENT)
-string(REGEX MATCH "\"[0-9]+.[0-9]+.[0-9]+.[0-9]+.*\"" VERSION_NUMBER ${VER_FILE_CONTENT})
+string(REGEX MATCH 
+    "#define[ \t]+LIB_VERSION[ \t]+([0-9]+\\.[0-9]+\\.[0-9]+)" 
+    _ 
+    "${VER_FILE_CONTENT}"
+)
+if (CMAKE_MATCH_1)
+    set(VERSION_NUMBER "${CMAKE_MATCH_1}")
+    message(STATUS "LIB_VERSION: ${VERSION_NUMBER}")
+else()
+    message(FATAL_ERROR "LIB_VERSION not found or format incorrect")
+endif()
 
 if (ANDROID)
     target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
