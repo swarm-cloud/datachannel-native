@@ -18,8 +18,8 @@ android {
         ndk.abiFilters.addAll(Consts.ndkAbis)
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(libs.versions.jvm.get().toInt())
-        targetCompatibility = JavaVersion.toVersion(libs.versions.jvm.get().toInt())
+        sourceCompatibility = JavaVersion.toVersion(17)//libs.versions.jvm.get().toInt())
+        targetCompatibility = JavaVersion.toVersion(17)//libs.versions.jvm.get().toInt())
     }
     buildFeatures {
         compose = true
