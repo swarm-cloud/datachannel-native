@@ -1,8 +1,8 @@
 object Consts {
-  const val androidCompileSdk = 33
+  const val androidCompileSdk = 35
   const val androidMinSdk = 16
-  const val androidTargetSdk = 33
-  const val androidNdk = "23.1.7779620"
+  const val androidTargetSdk = 35
+  const val androidNdk = "23.3.12186248"
   val ndkAbis = arrayOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
 //  val ndkAbis = arrayOf("armeabi-v7a")
 

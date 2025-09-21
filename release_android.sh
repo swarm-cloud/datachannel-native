@@ -14,7 +14,7 @@ mkdir -p ${INSTALL_DIR}
 cp data-channel-android/build/outputs/aar/data-channel-android-release.aar \
     ${INSTALL_DIR}/
 
-cp -r data-channel-android/build/intermediates/cmake/release/obj ${INSTALL_DIR}/symbols
+cp -r data-channel-android/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib ${INSTALL_DIR}/symbols
 
 pushd ~/Downloads/
 zip -r ${INSTALL_DIR}.zip libdc-Android-${VERSION}

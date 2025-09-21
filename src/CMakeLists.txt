@@ -117,6 +117,7 @@ if (ANDROID)
     target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
             "${PRJ_ROOT}/djinni/support-lib/jni"
             )
+    target_link_options(${CMAKE_PROJECT_NAME} PRIVATE "-Wl,-z,max-page-size=16384")
 
     target_link_libraries(${CMAKE_PROJECT_NAME}
             android

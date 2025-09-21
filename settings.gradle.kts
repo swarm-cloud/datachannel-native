@@ -4,17 +4,9 @@ pluginManagement {
     gradlePluginPortal()
     mavenCentral()
   }
-
-  plugins {
-    // See https://jmfayard.github.io/refreshVersions
-    // ./gradlew refreshVersionsMigrate --mode=VersionsPropertiesOnly
-    // ./gradlew refreshVersions
-    id("de.fayard.refreshVersions") version "0.51.0"
-  }
 }
-
 plugins {
-  id("de.fayard.refreshVersions")
+  id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
 }
 
 dependencyResolutionManagement {

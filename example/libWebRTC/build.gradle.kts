@@ -1,8 +1,7 @@
-import de.fayard.refreshVersions.core.versionFor
-
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -18,13 +17,14 @@ android {
         ndkVersion = Consts.androidNdk
         ndk.abiFilters.addAll(Consts.ndkAbis)
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.jvm.get().toInt())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.jvm.get().toInt())
+    }
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = versionFor(AndroidX.compose.compiler)
-    }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -38,10 +38,10 @@ android {
 
 dependencies {
     implementation(files("$rootDir/libs/webrtc.aar"))
-    implementation(AndroidX.compose.ui)
-    implementation(AndroidX.compose.ui.tooling)
-    implementation(AndroidX.compose.ui.toolingPreview)
-    implementation(AndroidX.compose.foundation)
-    implementation(AndroidX.compose.material)
-    implementation(AndroidX.activity.compose)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.activity.compose)
 }

@@ -103,7 +103,7 @@ The API is almost the same as Android, the difference is just the difference bet
 
 ## Development
 
-Install Android NDK 23.1.7779620 and export NDK env pointing to it.
+Install Android NDK android-ndk-r23d-canary (download from https://ci.android.com/builds/branches/aosp-ndk-release-r23/grid, and rename the folder as 23.3.12186248) and export NDK env pointing to it.
 
 Install dependencies:
 
