@@ -102,11 +102,11 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
 file(READ "cpp/PeerConnectionImpl.cpp" VER_FILE_CONTENT)
 string(REGEX MATCH 
-    "#define[ \t]+LIB_VERSION[ \t]+([0-9]+\\.[0-9]+\\.[0-9]+)" 
-    _ 
+    "#define[ \t]+LIB_VERSION[ \t]+\"([0-9]+\\.[0-9]+\\.[0-9]+)\"" 
+    VERSION_MATCH 
     "${VER_FILE_CONTENT}"
 )
-if (CMAKE_MATCH_1)
+if (VERSION_MATCH)
     set(VERSION_NUMBER "${CMAKE_MATCH_1}")
     message(STATUS "LIB_VERSION: ${VERSION_NUMBER}")
 else()

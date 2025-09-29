@@ -91,7 +91,7 @@ class MainActivity : ComponentActivity() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
           ) {
-            TestText(text = "libDC")
+            TestText(text = "libDC ${LibDC.version()}")
 
             Button(onClick = {
               testDc()

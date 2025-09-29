@@ -2,8 +2,8 @@
 
 set -e
 
-VERSION=$(grep -E '#define[[:space:]]+LIB_VERSION[[:space:]]+[0-9.]+' src/cpp/PeerConnectionImpl.cpp | \
-          sed -E 's/#define[[:space:]]+LIB_VERSION[[:space:]]+([0-9.]+).*/\1/')
+VERSION=$(grep -E '#define[[:space:]]+LIB_VERSION[[:space:]]+"[0-9.]+"' src/cpp/PeerConnectionImpl.cpp | \
+          sed -E 's/#define[[:space:]]+LIB_VERSION[[:space:]]+"([0-9.]+)".*/\1/')
 
 ./gradlew clean :data-channel-android:assembleRelease
 

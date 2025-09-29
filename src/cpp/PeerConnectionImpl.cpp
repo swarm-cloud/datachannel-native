@@ -333,9 +333,8 @@ std::shared_ptr<DataChannel> PeerConnectionImpl::createDataChannel(const std::st
 }
 
 std::string LibVersion::version() {
-#define LIB_VERSION 1.0.232
-#define STRINGIFY(x) #x
-    return STRINGIFY(LIB_VERSION);
+#define LIB_VERSION "1.0.232"
+    return LIB_VERSION;
 }
 
 } // libdc
